@@ -1,0 +1,19 @@
+# LiteLLM proxy config template.
+# scripts/render-config.py expands config/model-catalog.json at startup.
+
+model_list:
+__AUTO_MODEL_LIST__
+
+litellm_settings:
+  request_timeout: 120
+  num_retries: 2
+  drop_params: true
+  set_verbose: false
+
+router_settings:
+  routing_strategy: simple-shuffle
+  num_retries: 2
+  timeout: 120
+
+general_settings:
+__GENERAL_SETTINGS__

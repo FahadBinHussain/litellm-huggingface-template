@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.DS_Store
+.hf/
+.cache/
+litellm-config.yaml
+config/local.secrets.json
+config/local.generated.yaml
+config/*.generated.yaml
+config/*.tmp
