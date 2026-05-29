@@ -133,6 +133,10 @@ def pollinations_image_model_name(model: str) -> str | None:
     return None
 
 
+def is_image_only_model(model: str) -> bool:
+    return bool(cloudflare_image_model_id(model) or pollinations_image_model_name(model))
+
+
 def genlabs_payload(payload: dict[str, Any], *, stream: bool) -> dict[str, Any]:
     out = dict(payload)
     out["model"] = str(payload["model"]).split("/", 1)[1]
@@ -524,18 +528,6 @@ async def models_response(request: Request) -> Response:
                         "owned_by": "genlabs",
                     }
                 )
-        if pollinations_api_key():
-            for model in sorted(POLLINATIONS_IMAGE_MODELS):
-                if model not in existing:
-                    payload["data"].append(
-                        {
-                            "id": model,
-                            "object": "model",
-                            "created": 0,
-                            "owned_by": "pollinations",
-                            "mode": "image_generation",
-                        }
-                    )
     return JSONResponse(payload, status_code=upstream.status_code)
 
 
@@ -568,6 +560,21 @@ async def route(path: str, request: Request) -> Response:
             payload = await request.json()
         except json.JSONDecodeError:
             return JSONResponse({"error": "Invalid JSON body"}, status_code=400)
+        if is_image_only_model(str(payload.get("model") or "")):
+            return JSONResponse(
+                {
+                    "error": {
+                        "message": (
+                            f"{payload.get('model')} is an image-only route in this wrapper. "
+                            "Use /v1/images/generations for image generation and select a chat model "
+                            "for normal Open WebUI conversations."
+                        ),
+                        "type": "invalid_request_error",
+                        "code": "image_model_used_for_chat",
+                    }
+                },
+                status_code=400,
+            )
         if is_genlabs_chat_payload(payload):
             if bool(payload.get("stream")):
                 return await genlabs_stream(payload)
