@@ -23,6 +23,37 @@ NONSTREAM_UPSTREAM_MODELS = {
     for model in os.environ.get("NONSTREAM_UPSTREAM_MODELS", "voidai/gpt-oss-120b").split(",")
     if model.strip()
 }
+CLOUDFLARE_IMAGE_MODELS = {
+    model.strip()
+    for model in os.environ.get(
+        "CLOUDFLARE_IMAGE_MODELS",
+        ",".join(
+            [
+                "cloudflare/@cf/black-forest-labs/flux-1-schnell",
+                "cloudflare/@cf/black-forest-labs/flux-2-dev",
+                "cloudflare/@cf/black-forest-labs/flux-2-klein-4b",
+                "cloudflare/@cf/black-forest-labs/flux-2-klein-9b",
+                "cloudflare/@cf/bytedance/stable-diffusion-xl-lightning",
+                "cloudflare/@cf/leonardo/lucid-origin",
+                "cloudflare/@cf/leonardo/phoenix-1.0",
+                "cloudflare/@cf/lykon/dreamshaper-8-lcm",
+                "cloudflare/@cf/runwayml/stable-diffusion-v1-5-img2img",
+                "cloudflare/@cf/runwayml/stable-diffusion-v1-5-inpainting",
+                "cloudflare/@cf/stabilityai/stable-diffusion-xl-base-1.0",
+            ]
+        ),
+    ).split(",")
+    if model.strip()
+}
+CLOUDFLARE_IMAGE_MAX_N = max(1, int(os.environ.get("CLOUDFLARE_IMAGE_MAX_N", "1")))
+POLLINATIONS_IMAGE_MODELS = {
+    model.strip()
+    for model in os.environ.get(
+        "POLLINATIONS_IMAGE_MODELS",
+        "pollinations/flux,pollinations/zimage,pollinations/gptimage",
+    ).split(",")
+    if model.strip()
+}
 HOP_BY_HOP_HEADERS = {
     "connection",
     "content-length",
@@ -58,6 +89,24 @@ def genlabs_api_key() -> str | None:
     return value or None
 
 
+def cloudflare_api_token() -> str | None:
+    value = os.environ.get("CLOUDFLARE_API_TOKEN", "").strip()
+    return value or None
+
+
+def cloudflare_account_id() -> str | None:
+    value = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "").strip()
+    return value or None
+
+
+def pollinations_api_key() -> str | None:
+    for name in ("POLLINATIONS_API_KEY", "POLLINATIONS_API_KEY_1"):
+        value = os.environ.get(name, "").strip()
+        if value:
+            return value
+    return None
+
+
 def is_genlabs_chat_payload(payload: Any) -> bool:
     return isinstance(payload, dict) and payload.get("model") in GENLABS_MODELS
 
@@ -68,6 +117,20 @@ def is_nonstream_upstream_payload(payload: Any) -> bool:
         and bool(payload.get("stream"))
         and str(payload.get("model", "")) in NONSTREAM_UPSTREAM_MODELS
     )
+
+
+def cloudflare_image_model_id(model: str) -> str | None:
+    if model in CLOUDFLARE_IMAGE_MODELS:
+        return model.split("/", 1)[1]
+    if model.startswith("@cf/") and f"cloudflare/{model}" in CLOUDFLARE_IMAGE_MODELS:
+        return model
+    return None
+
+
+def pollinations_image_model_name(model: str) -> str | None:
+    if model in POLLINATIONS_IMAGE_MODELS:
+        return model.split("/", 1)[1]
+    return None
 
 
 def genlabs_payload(payload: dict[str, Any], *, stream: bool) -> dict[str, Any]:
@@ -286,6 +349,146 @@ async def genlabs_completion(payload: dict[str, Any]) -> Response:
     )
 
 
+def openai_image_data(image_base64: str, prompt: str, media_type: str = "image/jpeg") -> dict[str, str]:
+    return {
+        "b64_json": image_base64,
+        "url": f"data:{media_type};base64,{image_base64}",
+        "revised_prompt": prompt,
+    }
+
+
+def cloudflare_image_payload(payload: dict[str, Any]) -> dict[str, Any]:
+    out: dict[str, Any] = {"prompt": payload.get("prompt")}
+    for key in ("steps", "seed"):
+        if payload.get(key) is not None:
+            out[key] = payload[key]
+    return out
+
+
+async def cloudflare_images_generations(payload: dict[str, Any]) -> Response:
+    model = str(payload.get("model") or "")
+    model_id = cloudflare_image_model_id(model)
+    if not model_id:
+        return JSONResponse(
+            {"error": f"Unsupported Cloudflare image model: {model or '(missing)'}"},
+            status_code=400,
+        )
+
+    prompt = payload.get("prompt")
+    if not isinstance(prompt, str) or not prompt.strip():
+        return JSONResponse({"error": "Image generation prompt is required"}, status_code=400)
+
+    api_token = cloudflare_api_token()
+    account_id = cloudflare_account_id()
+    if not api_token or not account_id:
+        return JSONResponse(
+            {"error": "CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID must be configured"},
+            status_code=503,
+        )
+
+    requested_n = payload.get("n") if isinstance(payload.get("n"), int) else 1
+    image_count = min(max(1, requested_n), CLOUDFLARE_IMAGE_MAX_N)
+    images: list[dict[str, str]] = []
+    for _ in range(image_count):
+        response = await client.post(
+            f"https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/run/{model_id}",
+            headers={
+                "Authorization": f"Bearer {api_token}",
+                "Content-Type": "application/json",
+            },
+            json=cloudflare_image_payload(payload),
+        )
+
+        content_type = response.headers.get("content-type", "")
+        if response.status_code < 200 or response.status_code >= 300:
+            return Response(
+                response.content,
+                status_code=response.status_code,
+                headers=clean_headers(response.headers),
+                media_type=content_type,
+            )
+
+        if content_type.startswith("image/"):
+            import base64
+
+            media_type = content_type.split(";", 1)[0]
+            images.append(openai_image_data(base64.b64encode(response.content).decode("ascii"), prompt, media_type))
+            continue
+
+        try:
+            response_payload = response.json()
+        except json.JSONDecodeError:
+            return Response(
+                response.content,
+                status_code=response.status_code,
+                headers=clean_headers(response.headers),
+                media_type=content_type,
+            )
+
+        result = response_payload.get("result") if isinstance(response_payload, dict) else None
+        image_base64 = result.get("image") if isinstance(result, dict) else None
+        if not isinstance(image_base64, str) or not image_base64:
+            return JSONResponse(
+                {
+                    "error": "Cloudflare image response did not include result.image",
+                    "provider_response": response_payload,
+                },
+                status_code=502,
+            )
+        images.append(openai_image_data(image_base64, prompt))
+
+    return JSONResponse(
+        {
+            "created": int(time.time()),
+            "data": images,
+        }
+    )
+
+
+def pollinations_image_payload(payload: dict[str, Any], model_name: str) -> dict[str, Any]:
+    out: dict[str, Any] = {
+        "prompt": payload.get("prompt"),
+        "model": model_name,
+    }
+    for key in ("n", "size", "quality", "response_format", "user", "image", "safe"):
+        if payload.get(key) is not None:
+            out[key] = payload[key]
+    return out
+
+
+async def pollinations_images_generations(payload: dict[str, Any]) -> Response:
+    model = str(payload.get("model") or "")
+    model_name = pollinations_image_model_name(model)
+    if not model_name:
+        return JSONResponse(
+            {"error": f"Unsupported Pollinations image model: {model or '(missing)'}"},
+            status_code=400,
+        )
+
+    prompt = payload.get("prompt")
+    if not isinstance(prompt, str) or not prompt.strip():
+        return JSONResponse({"error": "Image generation prompt is required"}, status_code=400)
+
+    api_key = pollinations_api_key()
+    if not api_key:
+        return JSONResponse({"error": "POLLINATIONS_API_KEY must be configured"}, status_code=503)
+
+    response = await client.post(
+        "https://gen.pollinations.ai/v1/images/generations",
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+        },
+        json=pollinations_image_payload(payload, model_name),
+    )
+    return Response(
+        response.content,
+        status_code=response.status_code,
+        headers=clean_headers(response.headers),
+        media_type=response.headers.get("content-type"),
+    )
+
+
 async def genlabs_chat_completions(request: Request) -> Response:
     payload = await request.json()
     if bool(payload.get("stream")):
@@ -321,6 +524,18 @@ async def models_response(request: Request) -> Response:
                         "owned_by": "genlabs",
                     }
                 )
+        if pollinations_api_key():
+            for model in sorted(POLLINATIONS_IMAGE_MODELS):
+                if model not in existing:
+                    payload["data"].append(
+                        {
+                            "id": model,
+                            "object": "model",
+                            "created": 0,
+                            "owned_by": "pollinations",
+                            "mode": "image_generation",
+                        }
+                    )
     return JSONResponse(payload, status_code=upstream.status_code)
 
 
@@ -359,6 +574,15 @@ async def route(path: str, request: Request) -> Response:
             return await genlabs_completion(payload)
         if is_nonstream_upstream_payload(payload):
             return await nonstream_upstream_chat(request, payload)
+    if request.method == "POST" and normalized in {"/v1/images/generations", "/images/generations"}:
+        try:
+            payload = await request.json()
+        except json.JSONDecodeError:
+            return JSONResponse({"error": "Invalid JSON body"}, status_code=400)
+        if cloudflare_image_model_id(str(payload.get("model") or "")):
+            return await cloudflare_images_generations(payload)
+        if pollinations_image_model_name(str(payload.get("model") or "")):
+            return await pollinations_images_generations(payload)
 
     return await proxy_request(path, request)
 
