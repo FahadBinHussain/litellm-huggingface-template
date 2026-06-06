@@ -2,6 +2,7 @@ import json
 import os
 import time
 import uuid
+from pathlib import Path
 from typing import Any
 
 import httpx
@@ -12,6 +13,7 @@ from starlette.background import BackgroundTask
 
 
 UPSTREAM_URL = os.environ.get("LITELLM_UPSTREAM_URL", "http://127.0.0.1:7861").rstrip("/")
+MODEL_CATALOG_PATH = Path(os.environ.get("MODEL_CATALOG_PATH", "/app/config/model-catalog.json"))
 GENLABS_BASE_URL = os.environ.get("GENLABS_API_BASE", "https://api.genlabs.dev/deca/v1").rstrip("/")
 GENLABS_MODELS = (
     "genlabs/deca-2.5-mini",
@@ -69,6 +71,7 @@ HOP_BY_HOP_HEADERS = {
 
 app = FastAPI()
 client = httpx.AsyncClient(timeout=httpx.Timeout(300.0, connect=30.0))
+catalog_metadata_cache: dict[str, dict[str, Any]] | None = None
 
 
 @app.on_event("shutdown")
@@ -82,6 +85,264 @@ def clean_headers(headers: Any) -> dict[str, str]:
         for key, value in dict(headers).items()
         if key.lower() not in HOP_BY_HOP_HEADERS
     }
+
+
+def model_looks_free(model_id: str, name: str = "") -> bool:
+    text = f"{model_id} {name}".lower()
+    return (
+        model_id.lower().endswith(":free")
+        or ":free" in model_id.lower()
+        or " free" in text
+        or text.startswith("free ")
+        or text.endswith("(free)")
+    )
+
+
+def pricing_is_free(pricing: Any) -> bool:
+    if not isinstance(pricing, dict) or not pricing:
+        return False
+    numeric_prices = []
+    for value in pricing.values():
+        try:
+            numeric_prices.append(float(value))
+        except (TypeError, ValueError):
+            pass
+    return bool(numeric_prices) and all(price == 0 for price in numeric_prices)
+
+
+def capability_from_mode(mode: str | None) -> list[str]:
+    if not mode:
+        return []
+    normalized = mode.strip().lower().replace("-", "_")
+    if normalized in {"image", "image_generation", "text_to_image"}:
+        return ["image"]
+    if normalized in {"audio_transcription", "transcription"}:
+        return ["audio", "transcription"]
+    if normalized in {"audio_speech", "speech", "text_to_speech"}:
+        return ["audio", "speech"]
+    if normalized in {"embedding", "embeddings"}:
+        return ["embedding"]
+    if normalized in {"rerank", "reranking"}:
+        return ["rerank"]
+    if normalized in {"chat", "completion", "responses"}:
+        return ["text"]
+    return []
+
+
+def unique_strings(values: list[Any]) -> list[str]:
+    seen: set[str] = set()
+    out: list[str] = []
+    for value in values:
+        if not isinstance(value, str):
+            continue
+        label = value.strip().lower().replace("-", "_")
+        if not label or label in seen:
+            continue
+        seen.add(label)
+        out.append(label)
+    return out
+
+
+def suffix_parts(suffix: Any) -> tuple[str, str, dict[str, Any]]:
+    if isinstance(suffix, dict):
+        alias = str(suffix.get("alias") or suffix.get("id") or suffix.get("model") or "")
+        model = str(suffix.get("model") or alias)
+        return alias, model, suffix
+    value = str(suffix)
+    return value, value, {}
+
+
+def explicit_bool(value: Any) -> bool | None:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        lowered = value.strip().lower()
+        if lowered in {"true", "yes", "y", "1", "free"}:
+            return True
+        if lowered in {"false", "no", "n", "0", "paid"}:
+            return False
+    return None
+
+
+def catalog_entry_metadata(group: dict[str, Any], suffix: Any) -> tuple[str, dict[str, Any]] | None:
+    alias_prefix = str(group.get("alias_prefix") or "").strip()
+    model_prefix = str(group.get("model_prefix") or "").strip()
+    alias_suffix, model_suffix, suffix_meta = suffix_parts(suffix)
+    if not alias_prefix or not alias_suffix:
+        return None
+
+    model_id = f"{alias_prefix}/{alias_suffix}"
+    upstream_model = f"{model_prefix}/{model_suffix}" if model_prefix else model_suffix
+    group_info = group.get("model_info") if isinstance(group.get("model_info"), dict) else {}
+    suffix_info = suffix_meta.get("model_info") if isinstance(suffix_meta.get("model_info"), dict) else {}
+    model_info = {**group_info, **suffix_info}
+    mode = (
+        suffix_meta.get("mode")
+        or group.get("mode")
+        or model_info.get("mode")
+        or suffix_meta.get("task")
+        or group.get("task")
+    )
+    mode = str(mode).strip() if mode else None
+    raw_capabilities = []
+    for source in (group, suffix_meta, model_info):
+        capabilities = source.get("capabilities") if isinstance(source, dict) else None
+        if isinstance(capabilities, list):
+            raw_capabilities.extend(capabilities)
+        elif isinstance(capabilities, dict):
+            raw_capabilities.extend(
+                key for key, enabled in capabilities.items() if enabled
+            )
+
+    pricing = suffix_meta.get("pricing") or group.get("pricing") or model_info.get("pricing")
+    free_value = (
+        explicit_bool(suffix_meta.get("free"))
+        if "free" in suffix_meta
+        else explicit_bool(suffix_meta.get("is_free"))
+    )
+    if free_value is None:
+        free_value = (
+            explicit_bool(group.get("free"))
+            if "free" in group
+            else explicit_bool(group.get("is_free"))
+        )
+    if free_value is None:
+        free_value = pricing_is_free(pricing) or model_looks_free(model_id, str(model_info.get("name") or ""))
+
+    capabilities = unique_strings([*capability_from_mode(mode), *raw_capabilities])
+    provider = str(group.get("provider") or alias_prefix).strip()
+    metadata: dict[str, Any] = {
+        "id": model_id,
+        "provider": provider,
+        "source_model": upstream_model,
+        "free": bool(free_value),
+        "is_free": bool(free_value),
+        "capabilities": capabilities,
+        "catalog_source": "config/model-catalog.json",
+    }
+    if mode:
+        metadata["task"] = mode
+        metadata["mode"] = mode
+    if isinstance(pricing, dict):
+        metadata["pricing"] = pricing
+    if model_info:
+        metadata["model_info"] = {
+            **model_info,
+            "mode": mode or model_info.get("mode"),
+            "capabilities": capabilities or model_info.get("capabilities", []),
+            "free": bool(free_value),
+            "is_free": bool(free_value),
+        }
+    else:
+        metadata["model_info"] = {
+            "mode": mode,
+            "capabilities": capabilities,
+            "free": bool(free_value),
+            "is_free": bool(free_value),
+        }
+    return model_id, metadata
+
+
+def load_catalog_metadata() -> dict[str, dict[str, Any]]:
+    global catalog_metadata_cache
+    if catalog_metadata_cache is not None:
+        return catalog_metadata_cache
+
+    metadata: dict[str, dict[str, Any]] = {}
+    try:
+        catalog = json.loads(MODEL_CATALOG_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        catalog_metadata_cache = metadata
+        return metadata
+
+    if not isinstance(catalog, dict):
+        catalog_metadata_cache = metadata
+        return metadata
+
+    for group in catalog.get("groups", []):
+        if not isinstance(group, dict):
+            continue
+        for suffix in group.get("suffixes", []):
+            entry = catalog_entry_metadata(group, suffix)
+            if entry:
+                model_id, model_metadata = entry
+                metadata[model_id] = model_metadata
+
+    for model in GENLABS_MODELS:
+        metadata.setdefault(
+            model,
+            {
+                "id": model,
+                "provider": "genlabs",
+                "source_model": model.split("/", 1)[1],
+                "free": False,
+                "is_free": False,
+                "capabilities": ["text"],
+                "task": "chat",
+                "mode": "chat",
+                "catalog_source": "wrapper",
+                "model_info": {
+                    "mode": "chat",
+                    "capabilities": ["text"],
+                    "free": False,
+                    "is_free": False,
+                },
+            },
+        )
+    for model in sorted(CLOUDFLARE_IMAGE_MODELS | POLLINATIONS_IMAGE_MODELS):
+        provider = model.split("/", 1)[0] if "/" in model else "image"
+        metadata.setdefault(
+            model,
+            {
+                "id": model,
+                "provider": provider,
+                "source_model": model.split("/", 1)[1] if "/" in model else model,
+                "free": False,
+                "is_free": False,
+                "capabilities": ["image"],
+                "task": "image_generation",
+                "mode": "image_generation",
+                "catalog_source": "wrapper",
+                "model_info": {
+                    "mode": "image_generation",
+                    "capabilities": ["image"],
+                    "free": False,
+                    "is_free": False,
+                },
+            },
+        )
+
+    catalog_metadata_cache = metadata
+    return metadata
+
+
+def runtime_extra_model_ids() -> set[str]:
+    model_ids: set[str] = set()
+    if genlabs_api_key():
+        model_ids.update(GENLABS_MODELS)
+    if cloudflare_api_token() and cloudflare_account_id():
+        model_ids.update(CLOUDFLARE_IMAGE_MODELS)
+    if pollinations_api_key():
+        model_ids.update(POLLINATIONS_IMAGE_MODELS)
+    return model_ids
+
+
+def merge_model_metadata(raw_model: dict[str, Any], metadata: dict[str, Any]) -> dict[str, Any]:
+    enriched = dict(raw_model)
+    for key in ("provider", "free", "is_free", "pricing", "task", "mode", "capabilities", "catalog_source"):
+        if key in metadata and key not in enriched:
+            enriched[key] = metadata[key]
+
+    raw_info = enriched.get("model_info")
+    merged_info = dict(raw_info) if isinstance(raw_info, dict) else {}
+    metadata_info = metadata.get("model_info")
+    if isinstance(metadata_info, dict):
+        for key, value in metadata_info.items():
+            if key not in merged_info or merged_info.get(key) in (None, [], {}):
+                merged_info[key] = value
+    if merged_info:
+        enriched["model_info"] = merged_info
+    return enriched
 
 
 def genlabs_api_key() -> str | None:
@@ -516,19 +777,46 @@ async def models_response(request: Request) -> Response:
             media_type=upstream.headers.get("content-type"),
         )
 
+    catalog_metadata = load_catalog_metadata()
     if isinstance(payload, dict) and isinstance(payload.get("data"), list):
-        existing = {item.get("id") for item in payload["data"] if isinstance(item, dict)}
-        for model in GENLABS_MODELS:
+        enriched_data: list[Any] = []
+        existing = set()
+        for item in payload["data"]:
+            if isinstance(item, dict):
+                model_id = item.get("id")
+                if isinstance(model_id, str):
+                    existing.add(model_id)
+                    metadata = catalog_metadata.get(model_id)
+                    enriched_data.append(merge_model_metadata(item, metadata) if metadata else item)
+                    continue
+            enriched_data.append(item)
+        payload["data"] = enriched_data
+
+        for model in sorted(runtime_extra_model_ids()):
             if model not in existing:
+                metadata = catalog_metadata.get(model, {})
                 payload["data"].append(
                     {
                         "id": model,
                         "object": "model",
                         "created": 0,
-                        "owned_by": "genlabs",
+                        "owned_by": metadata.get("provider") or model.split("/", 1)[0],
+                        **{key: value for key, value in metadata.items() if key != "id"},
                     }
                 )
     return JSONResponse(payload, status_code=upstream.status_code)
+
+
+def model_catalog_response() -> Response:
+    metadata = load_catalog_metadata()
+    return JSONResponse(
+        {
+            "object": "model_catalog",
+            "source": str(MODEL_CATALOG_PATH),
+            "count": len(metadata),
+            "data": [metadata[key] for key in sorted(metadata)],
+        }
+    )
 
 
 async def proxy_request(path: str, request: Request) -> Response:
@@ -553,6 +841,8 @@ async def proxy_request(path: str, request: Request) -> Response:
 @app.api_route("/{path:path}", methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"])
 async def route(path: str, request: Request) -> Response:
     normalized = f"/{path}"
+    if request.method == "GET" and normalized in {"/v1/model-catalog", "/model-catalog"}:
+        return model_catalog_response()
     if request.method == "GET" and normalized == "/v1/models":
         return await models_response(request)
     if request.method == "POST" and normalized == "/v1/chat/completions":
