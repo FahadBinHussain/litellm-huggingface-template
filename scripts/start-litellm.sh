@@ -7,7 +7,7 @@ set -eu
 : "${LITELLM_CONFIG_TEMPLATE:=/app/config/config.yaml}"
 : "${LITELLM_RENDERED_CONFIG:=/tmp/litellm-config.yaml}"
 
-render_args="$LITELLM_CONFIG_TEMPLATE $LITELLM_RENDERED_CONFIG"
+render_args="$LITELLM_CONFIG_TEMPLATE $LITELLM_RENDERED_CONFIG --include-legacy-aliases"
 if [ "${LITELLM_STRICT_ENV:-}" = "1" ]; then
   render_args="$render_args --strict-env"
 fi

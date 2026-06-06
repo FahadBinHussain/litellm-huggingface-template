@@ -14,7 +14,7 @@ One wrapper for the same LiteLLM setup everywhere:
 - `config/config.yaml` is a tiny no-secret template.
 - `config/model-catalog.json` is the wrapper-owned 5k model catalog.
 - The optional sheet sync can populate API provider env entries; some are model routes and some are pass-through API routes.
-- Local and Hugging Face both render a full ignored LiteLLM config from the same template, catalog, and env names.
+- Local and Hugging Face both render a full ignored LiteLLM config from the same template, catalog, and configured env names.
 - Upstream LiteLLM stays untouched.
 
 ## Local
@@ -31,7 +31,7 @@ Start local uv LiteLLM through this wrapper:
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\start-local.ps1
 ```
 
-No global LiteLLM install is required. The script uses `litellm` if it is already on PATH, or falls back to `uvx --from litellm litellm`. The generated local config is `config/local.generated.yaml`; it contains the expanded model list and is not committed.
+No global LiteLLM install is required. The script uses `litellm` if it is already on PATH, or falls back to `uvx --from litellm[proxy] litellm`. The generated local config is `config/local.generated.yaml`; it contains the expanded model list and is not committed.
 
 ## Hugging Face
 
@@ -46,7 +46,9 @@ The Space uses the same `config/config.yaml` and `config/model-catalog.json`. At
 
 ## Notes
 
-The model catalog exposes OpenAI-compatible providers as LiteLLM model routes. Tool APIs that do not provide chat/model-compatible responses stay available through pass-through endpoints instead, for example `/tavily`, `/you`, `/twelvelabs`, `/worldlabs`, `/inference-sh`, `/exa`, and `/modal`.
+The model catalog exposes OpenAI-compatible providers as LiteLLM model routes. Only configured provider env slots are rendered into the runtime model list, and base slots also accept account-suffixed variants such as `OPENROUTER_API_KEY_WORK` or `HUGGINGFACE_API_KEY_WORK` as additional deployments. Tool APIs that do not provide chat/model-compatible responses stay available through pass-through endpoints instead, for example `/tavily`, `/you`, `/twelvelabs`, `/worldlabs`, `/inference-sh`, `/exa`, and `/modal`.
+
+Capability metadata in the catalog is intentionally conservative. Confirmed provider modes such as chat, embeddings, speech, transcription, and image generation are kept in `model_info`; filename/model-name hints are treated as heuristics until a provider endpoint or official docs confirm them. Paid, usage-based, trial-gated, or payment-method-gated models should stay labeled as such and should not become defaults.
 
 The public container runs a tiny wrapper in front of upstream LiteLLM. The wrapper forwards almost everything to LiteLLM, but adapts GenLabs Deca so `genlabs/deca-2.5-mini`, `genlabs/deca-2.5-pro`, and `genlabs/deca-2.5-ultra` work through `/v1/chat/completions` even though Deca returns streaming SSE responses.
 

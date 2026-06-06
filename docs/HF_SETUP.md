@@ -2,9 +2,9 @@
 
 This Space is a wrapper around upstream LiteLLM. It does not store provider keys or rendered runtime config in git.
 
-`config/config.yaml` stays small. `config/model-catalog.json` stores the grouped model catalog, and `scripts/render-config.py` expands it into `/tmp/litellm-config.yaml` every time the Space starts.
+`config/config.yaml` stays small. `config/model-catalog.json` stores the grouped model catalog, and `scripts/render-config.py` expands configured provider groups into `/tmp/litellm-config.yaml` every time the Space starts.
 
-The optional sheet sync can produce API provider env entries. The rendered config includes those as model-backed providers where LiteLLM can route models, and as pass-through endpoints for API providers that are not chat/model catalogs.
+The optional sheet sync can produce API provider env entries. The rendered config includes configured entries as model-backed providers where LiteLLM can route models, and as pass-through endpoints for API providers that are not chat/model catalogs. Base slots also accept account-suffixed variants, for example `OPENROUTER_API_KEY_WORK` or `HUGGINGFACE_API_KEY_WORK`, as extra deployments for the same catalog group.
 
 ## Deploy Code
 

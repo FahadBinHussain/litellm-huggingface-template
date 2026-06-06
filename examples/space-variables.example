@@ -1,5 +1,7 @@
 # Set these as Hugging Face Space secrets, not normal env vars.
 # Values intentionally omitted.
+# Numeric slots remain supported. Account-suffixed variants such as
+# OPENROUTER_API_KEY_WORK are also rendered when configured.
 
 AIMLAPI_API_KEY=
 ASSEMBLYAI_API_KEY=

@@ -24,17 +24,22 @@ if ($LiteLlmExe -and (Test-Path -LiteralPath $LiteLlmExe)) {
         if (-not $uvx) {
             throw 'LiteLLM is not installed and uvx was not found. Install with: uv tool install litellm'
         }
-        $liteLlmCommand = @($uvx.Source, '--from', 'litellm', 'litellm')
+        $liteLlmCommand = @($uvx.Source, '--from', 'litellm[proxy]', 'litellm')
     }
 }
 
-$loadOutput = . (Join-Path $PSScriptRoot 'load-local-secrets.ps1') -SecretsPath $secrets
-Write-Host $loadOutput
+$loadOutput = & (Join-Path $PSScriptRoot 'load-local-secrets.ps1') -SecretsPath $secrets
+$loadInfo = $loadOutput | ConvertFrom-Json
+Write-Host (@{
+    secretsPath = $loadInfo.secretsPath
+    loaded = $loadInfo.loaded
+} | ConvertTo-Json)
 
 $renderArgs = @(
     (Join-Path $PSScriptRoot 'render-config.py'),
     $template,
     $rendered,
+    '--include-legacy-aliases',
     '--secrets',
     $secrets
 )

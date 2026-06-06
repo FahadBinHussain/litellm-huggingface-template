@@ -245,6 +245,42 @@ def catalog_entry_metadata(group: dict[str, Any], suffix: Any) -> tuple[str, dic
     return model_id, metadata
 
 
+def merge_catalog_metadata(existing: dict[str, Any], incoming: dict[str, Any]) -> dict[str, Any]:
+    merged = dict(existing)
+    for key, value in incoming.items():
+        if key == "model_info":
+            current_info = merged.get("model_info")
+            merged_info = dict(current_info) if isinstance(current_info, dict) else {}
+            if isinstance(value, dict):
+                for info_key, info_value in value.items():
+                    current_value = merged_info.get(info_key)
+                    if current_value in (None, [], {}) and info_value not in (None, [], {}):
+                        merged_info[info_key] = info_value
+                    elif (
+                        info_key == "capabilities"
+                        and isinstance(info_value, list)
+                        and isinstance(current_value, list)
+                        and len(info_value) > len(current_value)
+                    ):
+                        merged_info[info_key] = info_value
+            if merged_info:
+                merged["model_info"] = merged_info
+            continue
+
+        current = merged.get(key)
+        if current in (None, [], {}) and value not in (None, [], {}):
+            merged[key] = value
+        elif (
+            key == "capabilities"
+            and isinstance(value, list)
+            and isinstance(current, list)
+            and len(value) > len(current)
+        ):
+            merged[key] = value
+
+    return merged
+
+
 def load_catalog_metadata() -> dict[str, dict[str, Any]]:
     global catalog_metadata_cache
     if catalog_metadata_cache is not None:
@@ -268,7 +304,10 @@ def load_catalog_metadata() -> dict[str, dict[str, Any]]:
             entry = catalog_entry_metadata(group, suffix)
             if entry:
                 model_id, model_metadata = entry
-                metadata[model_id] = model_metadata
+                if model_id in metadata:
+                    metadata[model_id] = merge_catalog_metadata(metadata[model_id], model_metadata)
+                else:
+                    metadata[model_id] = model_metadata
 
     for model in GENLABS_MODELS:
         metadata.setdefault(

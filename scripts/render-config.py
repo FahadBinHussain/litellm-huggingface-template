@@ -8,6 +8,7 @@ from typing import Any
 
 
 ENV_REF_RE = re.compile(r"os\.environ/([A-Za-z0-9_]+)")
+NUMBERED_ENV_SLOT_RE = re.compile(r"_\d+$")
 OPTIONAL_ENV_REFS = {
     "CLOUDFLARE_ACCOUNT_ID",
     "DATABASE_URL",
@@ -126,15 +127,57 @@ def env(name: str) -> str:
     return os.environ.get(name, "").strip()
 
 
-def env_names(base: str) -> list[str]:
+def unique(values: list[str]) -> list[str]:
+    seen: set[str] = set()
+    out: list[str] = []
+    for value in values:
+        if value in seen:
+            continue
+        seen.add(value)
+        out.append(value)
+    return out
+
+
+def env_variant_names(
+    base: str,
+    *,
+    include_numbered: bool = True,
+    include_named: bool = True,
+) -> list[str]:
     names: list[str] = []
     if env(base):
         names.append(base)
-    for index in range(1, 11):
-        name = f"{base}_{index}"
-        if env(name):
-            names.append(name)
-    return names
+
+    if include_numbered:
+        for index in range(1, 11):
+            name = f"{base}_{index}"
+            if env(name):
+                names.append(name)
+
+    if include_named and not NUMBERED_ENV_SLOT_RE.search(base):
+        prefix = f"{base}_"
+        for name in sorted(os.environ):
+            if not name.startswith(prefix):
+                continue
+            suffix = name[len(prefix) :]
+            if not suffix:
+                continue
+            if suffix.isdigit() and not include_numbered:
+                continue
+            if env(name):
+                names.append(name)
+
+    return unique(names)
+
+
+def env_names(base: str) -> list[str]:
+    return env_variant_names(base)
+
+
+def catalog_env_names(api_key_env: str) -> list[str]:
+    if NUMBERED_ENV_SLOT_RE.search(api_key_env):
+        return [api_key_env] if env(api_key_env) else []
+    return env_variant_names(api_key_env, include_numbered=False)
 
 
 def load_secrets(path: Path) -> int:
@@ -239,6 +282,12 @@ def build_legacy_models() -> list[dict[str, Any]]:
         )
         add_model(
             models,
+            suffixed("gemini-flash-lite", index, suffix_total),
+            "gemini/gemini-2.5-flash-lite",
+            api_key=f"os.environ/{key_name}",
+        )
+        add_model(
+            models,
             suffixed("gemini-pro", index, suffix_total),
             "gemini/gemini-2.5-pro",
             api_key=f"os.environ/{key_name}",
@@ -296,29 +345,38 @@ def load_model_catalog(path: Path) -> list[dict[str, Any]]:
 
     models: list[dict[str, Any]] = []
     for group in catalog.get("groups", []):
-        params = dict(group.get("params") or {})
         api_key_env = group.get("api_key_env")
         literal_api_key = group.get("literal_api_key")
+        env_slots: list[str | None]
         if api_key_env:
-            params["api_key"] = f"os.environ/{api_key_env}"
-        elif literal_api_key is not None:
-            params["api_key"] = literal_api_key
+            env_slots = catalog_env_names(str(api_key_env))
+            if not env_slots:
+                continue
+        else:
+            env_slots = [None]
 
-        for suffix in group.get("suffixes", []):
-            if isinstance(suffix, dict):
-                alias_suffix = suffix["alias"]
-                model_suffix = suffix["model"]
-            else:
-                alias_suffix = str(suffix)
-                model_suffix = str(suffix)
+        for env_slot in env_slots:
+            params = dict(group.get("params") or {})
+            if env_slot:
+                params["api_key"] = f"os.environ/{env_slot}"
+            elif literal_api_key is not None:
+                params["api_key"] = literal_api_key
 
-            add_model(
-                models,
-                f"{group['alias_prefix']}/{alias_suffix}",
-                f"{group['model_prefix']}/{model_suffix}",
-                model_info=group.get("model_info"),
-                **params,
-            )
+            for suffix in group.get("suffixes", []):
+                if isinstance(suffix, dict):
+                    alias_suffix = suffix["alias"]
+                    model_suffix = suffix["model"]
+                else:
+                    alias_suffix = str(suffix)
+                    model_suffix = str(suffix)
+
+                add_model(
+                    models,
+                    f"{group['alias_prefix']}/{alias_suffix}",
+                    f"{group['model_prefix']}/{model_suffix}",
+                    model_info=group.get("model_info"),
+                    **params,
+                )
 
     return models
 
@@ -352,6 +410,15 @@ def render_template(template: str, models: list[dict[str, Any]]) -> str:
 
 def env_refs(text: str) -> set[str]:
     return set(ENV_REF_RE.findall(text))
+
+
+def is_api_provider_env_ref(name: str) -> bool:
+    if name in API_PROVIDER_ENVS:
+        return True
+    for base in API_PROVIDER_ENVS:
+        if not NUMBERED_ENV_SLOT_RE.search(base) and name.startswith(f"{base}_"):
+            return True
+    return False
 
 
 def main() -> int:
@@ -396,7 +463,7 @@ def main() -> int:
     present = {name for name in refs if env(name)}
     missing_required = sorted(refs - present - OPTIONAL_ENV_REFS)
     missing_optional = sorted((refs - present) & OPTIONAL_ENV_REFS)
-    api_refs = sorted(refs & API_PROVIDER_ENVS)
+    api_refs = sorted(name for name in refs if is_api_provider_env_ref(name))
     api_present = sorted(set(api_refs) & present)
     missing_api_refs = sorted(set(api_refs) - present)
     summary = {
