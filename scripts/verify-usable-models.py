@@ -123,6 +123,13 @@ def is_transient_error(error: str | None) -> bool:
     return any(needle.lower() in error.lower() for needle in needles)
 
 
+def is_retryable_result(result: dict[str, Any]) -> bool:
+    status = result.get("http_status")
+    if isinstance(status, int) and status in {408, 409, 425, 429, 500, 502, 503, 504}:
+        return True
+    return is_transient_error(str(result.get("error") or ""))
+
+
 def ping_model_once(
     model_id: str,
     *,
@@ -196,7 +203,7 @@ def ping_model(
         if result.get("ok"):
             return result
         last_result = result
-        if attempt < attempts and is_transient_error(str(result.get("error") or "")):
+        if attempt < attempts and is_retryable_result(result):
             time.sleep(max(0, retry_sleep))
             continue
         return result
@@ -240,7 +247,7 @@ def image_capability_from_task(value: Any) -> bool:
     if not isinstance(value, str) or not value.strip():
         return False
     normalized = normalize_label(value)
-    return normalized in {"texttoimage", "imagegeneration"}
+    return normalized in {"texttoimage", "imagegeneration", "text2image", "t2i"}
 
 
 def raw_image_metadata(raw_model: dict[str, Any]) -> bool:
@@ -283,36 +290,231 @@ def raw_image_metadata(raw_model: dict[str, Any]) -> bool:
     return False
 
 
-def is_image_model_entry(raw_model: dict[str, Any]) -> bool:
-    if raw_image_metadata(raw_model):
-        return True
+IMAGE_GENERATION_TERMS = (
+    "black-forest-labs",
+    "dall-e",
+    "dalle",
+    "flux",
+    "gemini-2.5-flash-image",
+    "gemini-3-pro-image-preview",
+    "gpt-image",
+    "hunyuan-image",
+    "image",
+    "image-generation",
+    "image_generation",
+    "image-preview",
+    "imagen",
+    "ideogram",
+    "kandinsky",
+    "kolors",
+    "midjourney",
+    "nano-banana",
+    "playground-v",
+    "qwen-image",
+    "recraft",
+    "sdxl",
+    "seedream",
+    "stable-diffusion",
+    "text-to-image",
+    "z-image",
+    "zimage",
+)
 
-    text = " ".join(
-        str(raw_model.get(key) or "")
-        for key in ("id", "model", "name", "title", "task", "mode")
-    ).lower()
-    image_terms = (
-        "black-forest-labs",
-        "dall-e",
-        "dalle",
-        "flux",
-        "gpt-image",
-        "image-generation",
-        "image_generation",
-        "image-preview",
-        "imagen",
-        "ideogram",
-        "kandinsky",
-        "kolors",
-        "midjourney",
-        "playground-v",
-        "recraft",
-        "sdxl",
-        "seedream",
-        "stable-diffusion",
-        "text-to-image",
+IMAGE_GENERATION_LABELS = (
+    "t2i",
+    "texttoimage",
+    "text2image",
+    "imagegeneration",
+    "generatesimages",
+)
+
+IMAGE_NON_GENERATION_TERMS = (
+    "animate",
+    "depth",
+    "edit",
+    "first-last-image-to-video",
+    "i2v",
+    "image-to-image",
+    "image-to-video",
+    "img2img",
+    "inpaint",
+    "multi-image-to-video",
+    "outpaint",
+    "pose",
+    "reframe",
+    "remove-background",
+    "replace",
+    "r2v",
+    "text-to-video",
+    "upscale",
+    "video",
+    "vto",
+)
+
+
+def raw_model_text(raw_model: dict[str, Any]) -> str:
+    values: list[str] = []
+    for mapping in raw_model_dicts(raw_model):
+        for key in ("id", "model", "name", "title", "task", "task_name", "type", "mode"):
+            value = mapping.get(key)
+            if isinstance(value, dict):
+                value = value.get("name")
+            if value is not None:
+                values.append(str(value))
+    return " ".join(values).lower()
+
+
+def image_candidate_kind(raw_model: dict[str, Any]) -> str | None:
+    text = raw_model_text(raw_model)
+    normalized = normalize_label(text)
+    has_generation_metadata = raw_image_metadata(raw_model)
+    has_generation_term = any(term in text for term in IMAGE_GENERATION_TERMS)
+    has_generation_label = any(label in normalized for label in IMAGE_GENERATION_LABELS)
+
+    if not has_generation_metadata and not has_generation_term and not has_generation_label:
+        return None
+    if any(term in text for term in IMAGE_NON_GENERATION_TERMS):
+        return "other-image"
+    return "generation"
+
+
+def is_image_model_entry(raw_model: dict[str, Any], *, scope: str = "generation") -> bool:
+    kind = image_candidate_kind(raw_model)
+    if scope == "all":
+        return kind is not None
+    return kind == "generation"
+
+
+def classify_failure(result: dict[str, Any]) -> str | None:
+    if result.get("ok"):
+        return None
+    status = result.get("http_status")
+    error = str(result.get("error") or "").lower()
+    if status == 402:
+        return "payment_required"
+    if status == 403 and any(term in error for term in ("funds", "balance", "payment method", "top up")):
+        return "provider_funds_or_billing"
+    if status == 403:
+        return "provider_forbidden"
+    if status == 404:
+        return "model_not_found"
+    if status == 429:
+        return "rate_limited"
+    if status in {500, 502, 503, 504}:
+        return "provider_server_error"
+    if status == 400 and any(term in error for term in ("invalid payload", "required", "multipart", "image")):
+        return "wrong_image_payload_or_endpoint"
+    if status == 400:
+        return "bad_request"
+    if is_transient_error(error):
+        return "network_transient"
+    if result.get("error") == "missing image data in successful response":
+        return "unexpected_response_shape"
+    return "unknown"
+
+
+def sanitize_failure_error(error: Any) -> str | None:
+    if error is None:
+        return None
+    text = str(error).replace("\n", " ")
+    text = re.sub(r"\$[0-9]+(?:\.[0-9]+)?", "$[amount]", text)
+    text = re.sub(
+        r"(?i)(available balance(?: is| of)? )[-+]?[0-9]+(?:\.[0-9]+)?",
+        r"\1[amount]",
+        text,
     )
-    return any(term in text for term in image_terms)
+    text = re.sub(
+        r"(?i)(balance(?: of)? )[-+]?[0-9]+(?:\.[0-9]+)?",
+        r"\1[amount]",
+        text,
+    )
+    text = re.sub(
+        r"(?i)(costs? ~?)[-+]?[0-9]+(?:\.[0-9]+)?",
+        r"\1[amount]",
+        text,
+    )
+    if len(text) > 260:
+        return f"{text[:257]}..."
+    return text
+
+
+def compact_failure(result: dict[str, Any]) -> dict[str, Any]:
+    compact = {
+        "id": result.get("id"),
+        "ok": False,
+        "http_status": result.get("http_status"),
+        "latency_ms": result.get("latency_ms"),
+        "attempts": result.get("attempts"),
+        "error_class": classify_failure(result),
+        "error": sanitize_failure_error(result.get("error")),
+    }
+    return {key: value for key, value in compact.items() if value is not None}
+
+
+def error_class_summary(results: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    counts: dict[str, int] = {}
+    for result in results:
+        failure_class = classify_failure(result)
+        if failure_class:
+            counts[failure_class] = counts.get(failure_class, 0) + 1
+    return [
+        {"error_class": error_class, "count": count}
+        for error_class, count in sorted(counts.items(), key=lambda item: (-item[1], item[0]))
+    ]
+
+
+IMAGE_CARRYABLE_FAILURE_CLASSES = {
+    "network_transient",
+    "provider_server_error",
+    "rate_limited",
+}
+
+
+def carry_previous_image_models(
+    existing: dict[str, Any],
+    image_payload: dict[str, Any],
+) -> dict[str, Any]:
+    current_models = [
+        model for model in image_payload.get("image_models", []) if isinstance(model, dict)
+    ]
+    current_ids = {str(model.get("id")) for model in current_models if model.get("id")}
+    failures = {
+        str(model.get("id")): model
+        for model in image_payload.get("image_failure_models", [])
+        if isinstance(model, dict) and model.get("id")
+    }
+
+    carried: list[dict[str, Any]] = []
+    for previous in existing.get("image_models", []):
+        if not isinstance(previous, dict) or not previous.get("id"):
+            continue
+        model_id = str(previous["id"])
+        if model_id in current_ids:
+            continue
+        failure = failures.get(model_id)
+        if not failure:
+            continue
+        failure_class = str(failure.get("error_class") or "")
+        if failure_class not in IMAGE_CARRYABLE_FAILURE_CLASSES:
+            continue
+        carried_model = dict(previous)
+        carried_model["carried_from_previous"] = True
+        carried_model["last_probe_error_class"] = failure_class
+        carried_model["last_probe_http_status"] = failure.get("http_status")
+        carried_model["last_probe_checked_at"] = image_payload.get("image_checked_at")
+        carried.append(carried_model)
+
+    combined = sorted(
+        current_models + carried,
+        key=lambda item: str(item.get("id") or ""),
+    )
+    updated = dict(image_payload)
+    updated["image_current_usable_count"] = len(current_models)
+    updated["image_carried_usable_count"] = len(carried)
+    updated["image_usable_count"] = len(combined)
+    updated["image_usable_model_ids"] = [str(model["id"]) for model in combined]
+    updated["image_models"] = combined
+    return updated
 
 
 def ping_image_model_once(
@@ -396,7 +598,7 @@ def ping_image_model(
         if result.get("ok"):
             return result
         last_result = result
-        if attempt < attempts and is_transient_error(str(result.get("error") or "")):
+        if attempt < attempts and is_retryable_result(result):
             time.sleep(max(0, retry_sleep))
             continue
         return result
@@ -502,6 +704,7 @@ def image_output_payload(
         key=lambda item: item["id"],
     )
     failures = [result for result in results if not result.get("ok")]
+    compact_failures = [compact_failure(result) for result in sorted(failures, key=lambda item: str(item["id"]))]
     return {
         "image_checked_at": checked_at,
         "image_base_url": base_url,
@@ -516,7 +719,9 @@ def image_output_payload(
         "image_usable_model_ids": [model["id"] for model in usable],
         "image_models": usable,
         "image_failure_summary": error_summary(results),
-        "image_failure_samples": sorted(failures, key=lambda item: str(item["id"]))[:50],
+        "image_failure_class_summary": error_class_summary(results),
+        "image_failure_models": compact_failures,
+        "image_failure_samples": compact_failures[:50],
     }
 
 
@@ -528,6 +733,7 @@ def merge_image_output(path: Path, image_payload: dict[str, Any]) -> dict[str, A
     if not isinstance(existing, dict):
         existing = {}
     merged = dict(existing)
+    image_payload = carry_previous_image_models(existing, image_payload)
     merged.update(image_payload)
     return merged
 
@@ -579,6 +785,12 @@ def main() -> int:
         default=None,
         help="Optional image size to send. Omit by default for provider compatibility.",
     )
+    parser.add_argument(
+        "--image-scope",
+        choices=("generation", "all"),
+        default="generation",
+        help="Image candidate scope. generation keeps prompt-to-image models; all also includes edit/video/upscale-like image entries for diagnosis.",
+    )
     parser.add_argument("--max-tokens", type=int, default=1)
     parser.add_argument("--timeout", type=float, default=25)
     parser.add_argument("--concurrency", type=int, default=8)
@@ -597,7 +809,11 @@ def main() -> int:
     base_url = normalize_base_url(args.base_url)
     model_entries = fetch_model_entries(base_url, api_key, args.timeout)
     if args.probe == "image":
-        model_entries = [entry for entry in model_entries if is_image_model_entry(entry)]
+        model_entries = [
+            entry
+            for entry in model_entries
+            if is_image_model_entry(entry, scope=args.image_scope)
+        ]
     model_ids = [entry["id"] for entry in model_entries]
     targets = filtered_models(
         model_ids,

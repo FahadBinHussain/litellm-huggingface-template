@@ -444,515 +444,2900 @@
     }
   ],
   "image_base_url": "https://awdafw-litellm-huggingface-template.hf.space/v1",
-  "image_checked_at": "2026-06-06T11:18:12.782653Z",
+  "image_carried_usable_count": 3,
+  "image_checked_at": "2026-06-06T14:06:25.819359Z",
   "image_complete": true,
-  "image_failure_count": 230,
-  "image_failure_samples": [
+  "image_current_usable_count": 7,
+  "image_failure_class_summary": [
+    {
+      "count": 66,
+      "error_class": "payment_required"
+    },
+    {
+      "count": 54,
+      "error_class": "rate_limited"
+    },
+    {
+      "count": 49,
+      "error_class": "provider_forbidden"
+    },
+    {
+      "count": 46,
+      "error_class": "provider_funds_or_billing"
+    },
+    {
+      "count": 16,
+      "error_class": "wrong_image_payload_or_endpoint"
+    },
+    {
+      "count": 10,
+      "error_class": "provider_server_error"
+    },
+    {
+      "count": 6,
+      "error_class": "unexpected_response_shape"
+    },
+    {
+      "count": 5,
+      "error_class": "bad_request"
+    },
+    {
+      "count": 1,
+      "error_class": "model_not_found"
+    }
+  ],
+  "image_failure_count": 253,
+  "image_failure_models": [
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/alibaba/qwen-image",
+      "latency_ms": 9417,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/alibaba/wan-2-6-image",
+      "latency_ms": 8611,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/alibaba/wan2.2-t2i-flash",
+      "latency_ms": 7239,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/alibaba/wan2.2-t2i-plus",
+      "latency_ms": 5709,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/alibaba/wan2.5-t2i-preview",
+      "latency_ms": 6229,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/alibaba/z-image-turbo",
+      "latency_ms": 7815,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/alibaba/z-image-turbo-lora",
+      "latency_ms": 6779,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/blackforestlabs/flux-2",
-      "latency_ms": 8480,
-      "ok": false
-    },
-    {
-      "attempts": 1,
-      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Invalid payload provided. Received Model Group=aimlapi/blackforestlabs/flux-2-edit\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"4",
-      "http_status": 400,
-      "id": "aimlapi/blackforestlabs/flux-2-edit",
-      "latency_ms": 3777,
+      "latency_ms": 5807,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/blackforestlabs/flux-2-lora",
-      "latency_ms": 8819,
-      "ok": false
-    },
-    {
-      "attempts": 1,
-      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Invalid payload provided. Received Model Group=aimlapi/blackforestlabs/flux-2-lora-edit\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"cod",
-      "http_status": 400,
-      "id": "aimlapi/blackforestlabs/flux-2-lora-edit",
-      "latency_ms": 3709,
+      "latency_ms": 6433,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/blackforestlabs/flux-2-max",
-      "latency_ms": 6854,
-      "ok": false
-    },
-    {
-      "attempts": 1,
-      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Invalid payload provided. Received Model Group=aimlapi/blackforestlabs/flux-2-max-edit\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code",
-      "http_status": 400,
-      "id": "aimlapi/blackforestlabs/flux-2-max-edit",
-      "latency_ms": 1381,
+      "latency_ms": 6378,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/blackforestlabs/flux-2-pro",
-      "latency_ms": 6283,
+      "latency_ms": 6083,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
-      "http_status": 403,
-      "id": "aimlapi/blackforestlabs/flux-2-pro-edit",
-      "latency_ms": 6355,
-      "ok": false
-    },
-    {
-      "attempts": 1,
-      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/bytedance/seedream-3.0",
-      "latency_ms": 6225,
+      "latency_ms": 6651,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/bytedance/seedream-4-5",
-      "latency_ms": 6412,
+      "latency_ms": 6403,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/bytedance/seedream-5-0-lite-preview",
-      "latency_ms": 6150,
+      "latency_ms": 5937,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
-      "http_status": 403,
-      "id": "aimlapi/bytedance/seedream-v4-edit",
-      "latency_ms": 6559,
-      "ok": false
-    },
-    {
-      "attempts": 1,
-      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/bytedance/seedream-v4-text-to-image",
-      "latency_ms": 6328,
+      "latency_ms": 6369,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/dall-e-2",
-      "latency_ms": 6266,
+      "latency_ms": 6312,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/dall-e-3",
-      "latency_ms": 6226,
+      "latency_ms": 6746,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/flux-pro",
-      "latency_ms": 6063,
+      "latency_ms": 5751,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/flux-pro/v1.1",
-      "latency_ms": 6769,
+      "latency_ms": 6224,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/flux-pro/v1.1-ultra",
-      "latency_ms": 7528,
+      "latency_ms": 6995,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/flux-realism",
-      "latency_ms": 6678,
+      "latency_ms": 6113,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/flux/dev",
-      "latency_ms": 5723,
+      "latency_ms": 6580,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
-      "http_status": 403,
-      "id": "aimlapi/flux/dev/image-to-image",
-      "latency_ms": 6951,
-      "ok": false
-    },
-    {
-      "attempts": 1,
-      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
-      "http_status": 403,
-      "id": "aimlapi/flux/kontext-max/image-to-image",
-      "latency_ms": 6003,
-      "ok": false
-    },
-    {
-      "attempts": 1,
-      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/flux/kontext-max/text-to-image",
-      "latency_ms": 7712,
+      "latency_ms": 6296,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
-      "http_status": 403,
-      "id": "aimlapi/flux/kontext-pro/image-to-image",
-      "latency_ms": 6344,
-      "ok": false
-    },
-    {
-      "attempts": 1,
-      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/flux/kontext-pro/text-to-image",
-      "latency_ms": 6754,
+      "latency_ms": 6334,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/flux/schnell",
-      "latency_ms": 6673,
+      "latency_ms": 6288,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/flux/srpo",
-      "latency_ms": 6401,
-      "ok": false
-    },
-    {
-      "attempts": 1,
-      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Invalid payload provided. Received Model Group=aimlapi/flux/srpo/image-to-image\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"400\"",
-      "http_status": 400,
-      "id": "aimlapi/flux/srpo/image-to-image",
-      "latency_ms": 1363,
+      "latency_ms": 6318,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/google/gemini-2.5-flash-image",
+      "latency_ms": 5799,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/google/gemini-3-pro-image-preview",
-      "latency_ms": 5969,
-      "ok": false
-    },
-    {
-      "attempts": 1,
-      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Invalid payload provided. Received Model Group=aimlapi/google/gemini-3-pro-image-preview-edit\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":nul",
-      "http_status": 400,
-      "id": "aimlapi/google/gemini-3-pro-image-preview-edit",
-      "latency_ms": 1353,
+      "latency_ms": 6235,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/google/imagen-4.0-fast-generate-001",
-      "latency_ms": 6103,
+      "latency_ms": 5660,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/google/imagen-4.0-generate-001",
-      "latency_ms": 6385,
+      "latency_ms": 6578,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/google/imagen-4.0-ultra-generate-001",
+      "latency_ms": 6555,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/google/imagen4/preview",
+      "latency_ms": 6137,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/google/nano-banana-pro",
+      "latency_ms": 6795,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/hunyuan/hunyuan-image-v3-text-to-image",
+      "latency_ms": 5828,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/imagen-3.0-generate-002",
+      "latency_ms": 6623,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Invalid payload provided. Received Model Group=aimlapi/klingai/image-o1\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"400\"}}",
+      "error_class": "wrong_image_payload_or_endpoint",
+      "http_status": 400,
+      "id": "aimlapi/klingai/image-o1",
+      "latency_ms": 3895,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Invalid payload provided. Received Model Group=aimlapi/magic/image-to-3d\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"400\"}}",
+      "error_class": "wrong_image_payload_or_endpoint",
+      "http_status": 400,
+      "id": "aimlapi/magic/image-to-3d",
+      "latency_ms": 1364,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/openai/gpt-image-1",
       "latency_ms": 5690,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
-      "http_status": 403,
-      "id": "aimlapi/google/imagen4/preview",
-      "latency_ms": 6420,
-      "ok": false
-    },
-    {
-      "attempts": 1,
-      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
-      "http_status": 403,
-      "id": "aimlapi/hunyuan/hunyuan-image-v3-text-to-image",
-      "latency_ms": 7977,
-      "ok": false
-    },
-    {
-      "attempts": 1,
-      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
-      "http_status": 403,
-      "id": "aimlapi/imagen-3.0-generate-002",
-      "latency_ms": 6822,
-      "ok": false
-    },
-    {
-      "attempts": 1,
-      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
-      "http_status": 403,
-      "id": "aimlapi/openai/gpt-image-1",
-      "latency_ms": 5853,
-      "ok": false
-    },
-    {
-      "attempts": 1,
-      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/openai/gpt-image-1-5",
-      "latency_ms": 7199,
+      "latency_ms": 5848,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/openai/gpt-image-1-mini",
-      "latency_ms": 6547,
+      "latency_ms": 5844,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/recraft-v3",
-      "latency_ms": 6324,
+      "latency_ms": 6130,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/reve/create-image",
+      "latency_ms": 5876,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/sber-ai/kandinsky5-distill-t2v",
-      "latency_ms": 6548,
+      "latency_ms": 6341,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/sber-ai/kandinsky5-t2v",
-      "latency_ms": 6073,
+      "latency_ms": 5742,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/stable-diffusion-v3-medium",
-      "latency_ms": 6119,
+      "latency_ms": 5982,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
       "http_status": 403,
       "id": "aimlapi/stable-diffusion-v35-large",
-      "latency_ms": 6438,
+      "latency_ms": 6316,
       "ok": false
     },
     {
       "attempts": 1,
-      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: AiError: Input prompt contains NSFW content. (2847e007-d6ca-4481-a0f1-f4de0b544904)\",\"code\":3030}],\"success\":false,\"result\":{},\"messages\":[]}",
-      "http_status": 400,
-      "id": "cloudflare/@cf/black-forest-labs/flux-1-schnell",
-      "latency_ms": 2496,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/x-ai/grok-imagine-image",
+      "latency_ms": 5787,
       "ok": false
     },
     {
       "attempts": 1,
-      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'multipart' (74ea3f5c-1a0b-41e2-b12e-3e43778f7fe3)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/x-ai/grok-imagine-image-pro",
+      "latency_ms": 6120,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'multipart' (17cc6e99-9b37-4ed7-a778-44969eda8b81)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "error_class": "wrong_image_payload_or_endpoint",
       "http_status": 400,
       "id": "cloudflare/@cf/black-forest-labs/flux-2-dev",
-      "latency_ms": 1329,
+      "latency_ms": 1116,
       "ok": false
     },
     {
       "attempts": 1,
-      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'multipart' (b9b7bb9c-6380-4108-b9b7-b3610a2d9066)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'multipart' (2e2baee6-ac93-41c9-999a-565964fdd7e9)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "error_class": "wrong_image_payload_or_endpoint",
       "http_status": 400,
       "id": "cloudflare/@cf/black-forest-labs/flux-2-klein-4b",
-      "latency_ms": 1241,
+      "latency_ms": 1096,
       "ok": false
     },
     {
       "attempts": 1,
-      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'multipart' (bb49cee0-0545-433d-8d19-73760756ca32)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'multipart' (ba3f2748-ac6b-445a-8523-638979490cf1)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "error_class": "wrong_image_payload_or_endpoint",
       "http_status": 400,
       "id": "cloudflare/@cf/black-forest-labs/flux-2-klein-9b",
-      "latency_ms": 1259,
+      "latency_ms": 1086,
       "ok": false
     },
     {
       "attempts": 1,
       "error": "missing image data in successful response",
+      "error_class": "unexpected_response_shape",
       "http_status": 200,
       "id": "cloudflare/@cf/deepgram/flux",
-      "latency_ms": 1231,
+      "latency_ms": 1121,
       "ok": false
     },
     {
       "attempts": 1,
-      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: AiError: Model input is not valid: missing required input image (acdd18b3-b484-425d-8627-d5cb9f3f13df)\",\"code\":3030}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "error": "missing image data in successful response",
+      "error_class": "unexpected_response_shape",
+      "http_status": 200,
+      "id": "cloudflare/@cf/huggingface/distilbert-sst-2-int8",
+      "latency_ms": 1016,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "missing image data in successful response",
+      "error_class": "unexpected_response_shape",
+      "http_status": 200,
+      "id": "cohere/embed-english-light-v3.0-image",
+      "latency_ms": 1027,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "missing image data in successful response",
+      "error_class": "unexpected_response_shape",
+      "http_status": 200,
+      "id": "cohere/embed-english-v3.0-image",
+      "latency_ms": 1056,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "missing image data in successful response",
+      "error_class": "unexpected_response_shape",
+      "http_status": 200,
+      "id": "cohere/embed-multilingual-light-v3.0-image",
+      "latency_ms": 1076,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "missing image data in successful response",
+      "error_class": "unexpected_response_shape",
+      "http_status": 200,
+      "id": "cohere/embed-multilingual-v3.0-image",
+      "latency_ms": 1004,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Model(s) not found or inactive: fireworks_ai/accounts/fireworks/models/flux-1-dev-controlnet-union. Received Model Group=edenai/fireworks_ai/accounts/firewo",
+      "error_class": "bad_request",
       "http_status": 400,
-      "id": "cloudflare/@cf/runwayml/stable-diffusion-v1-5-img2img",
+      "id": "edenai/fireworks_ai/accounts/fireworks/models/flux-1-dev-controlnet-union",
+      "latency_ms": 1504,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Model(s) not found or inactive: fireworks_ai/accounts/fireworks/models/flux-1-schnell. Received Model Group=edenai/fireworks_ai/accounts/fireworks/models/fl",
+      "error_class": "bad_request",
+      "http_status": 400,
+      "id": "edenai/fireworks_ai/accounts/fireworks/models/flux-1-schnell",
+      "latency_ms": 1331,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Insufficient AI credit. Please top up your balance.. Received Model Group=edenai/google/gemini-2.5-flash-image\\nAvailable Model Group Fallbacks=None\",\"ty",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "edenai/google/gemini-2.5-flash-image",
+      "latency_ms": 1287,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Insufficient AI credit. Please top up your balance.. Received Model Group=edenai/google/gemini-3-pro-image-preview\\nAvailable Model Group Fallbacks=None\"",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "edenai/google/gemini-3-pro-image-preview",
+      "latency_ms": 1255,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Insufficient AI credit. Please top up your balance.. Received Model Group=edenai/google/gemini-3.1-flash-image-preview\\nAvailable Model Group Fallbacks=N",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "edenai/google/gemini-3.1-flash-image-preview",
+      "latency_ms": 1339,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Insufficient AI credit. Please top up your balance.. Received Model Group=edenai/openai/gpt-image-2\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"p",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "edenai/openai/gpt-image-2",
+      "latency_ms": 1353,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Error code: 400 - {'detail': {'error': {'message': 'Invalid model.', 'type': 'error', 'param': None, 'code': 400}}}. Received Model Group=electronhub/dall-e",
+      "error_class": "bad_request",
+      "http_status": 400,
+      "id": "electronhub/dall-e-2",
+      "latency_ms": 1218,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Error code: 400 - {'detail': {'error': {'message': 'Invalid model.', 'type': 'error', 'param': None, 'code': 400}}}. Received Model Group=electronhub/dall-e",
+      "error_class": "bad_request",
+      "http_status": 400,
+      "id": "electronhub/dall-e-3",
+      "latency_ms": 1148,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/flux-1-kontext-dev",
+      "latency_ms": 2675,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'Premium model requires a subscription.', 'type': 'error', 'param': None, 'code': 402}}}. Received Mod",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/flux-1-kontext-max",
+      "latency_ms": 1090,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'Premium model requires a subscription.', 'type': 'error', 'param': None, 'code': 402}}}. Received Mod",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/flux-1-kontext-pro",
+      "latency_ms": 1051,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 118 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/flux-1-krea-dev",
+      "latency_ms": 9966,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 117 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/flux-1.1-pro",
+      "latency_ms": 10581,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 54 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/flux-1.1-pro-ultra",
+      "latency_ms": 10690,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 52 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/flux-1.1-pro-ultra-raw",
+      "latency_ms": 10363,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'Premium model requires a subscription.', 'type': 'error', 'param': None, 'code': 402}}}. Received Mod",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/flux-2-klein-4b",
+      "latency_ms": 1335,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'Premium model requires a subscription.', 'type': 'error', 'param': None, 'code': 402}}}. Received Mod",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/flux-2-klein-9b",
+      "latency_ms": 1369,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/flux-black-light",
+      "latency_ms": 2565,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/flux-dev",
+      "latency_ms": 2483,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/flux-dreamscape",
+      "latency_ms": 1259,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 118 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/flux-half-illustration",
+      "latency_ms": 10483,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 119 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/flux-lineart",
+      "latency_ms": 10233,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 54 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/flux-minecraft-movie",
+      "latency_ms": 10674,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 54 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/flux-pro",
+      "latency_ms": 10153,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/flux-realism",
+      "latency_ms": 1166,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 141 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/flux-schnell",
+      "latency_ms": 45774,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Error code: 400 - {'detail': {'error': {'message': 'This model does not support /v1/images/generations.', 'type': 'error', 'param': None, 'code': 400}}}. Re",
+      "error_class": "wrong_image_payload_or_endpoint",
+      "http_status": 400,
+      "id": "electronhub/gemini-3-pro-image-preview",
+      "latency_ms": 1044,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Error code: 400 - {'detail': {'error': {'message': 'This model does not support /v1/images/generations.', 'type': 'error', 'param': None, 'code': 400}}}. Re",
+      "error_class": "wrong_image_payload_or_endpoint",
+      "http_status": 400,
+      "id": "electronhub/gemini-3.1-flash-image-preview",
+      "latency_ms": 1127,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'Premium model requires a subscription.', 'type': 'error', 'param': None, 'code': 402}}}. Received Mod",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/gpt-image-1",
+      "latency_ms": 1181,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 119 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/gpt-image-1-mini",
+      "latency_ms": 10883,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 76 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/kolors",
+      "latency_ms": 10741,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 54 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/nsfw-master-flux",
+      "latency_ms": 9832,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 8 seconds.', 'type': 'error', 'param': None, 'code': 42",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/playground-v2.5",
+      "latency_ms": 10717,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Error code: 400 - {'detail': {'error': {'message': 'Invalid model.', 'type': 'error', 'param': None, 'code': 400}}}. Received Model Group=electronhub/playgr",
+      "error_class": "bad_request",
+      "http_status": 400,
+      "id": "electronhub/playground-v3",
+      "latency_ms": 1241,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'Premium model requires a subscription.', 'type': 'error', 'param': None, 'code': 402}}}. Received Mod",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/qwen-image",
+      "latency_ms": 6737,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-aamxl-anime-mix-v10",
+      "latency_ms": 1236,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-amanatsu-illustrious-v11",
+      "latency_ms": 1597,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 119 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-animij-v2",
+      "latency_ms": 10429,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 109 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-animij-v5",
+      "latency_ms": 10458,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 53 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-arlimix-v1",
+      "latency_ms": 10728,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 45 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-aungir-t6ao45",
+      "latency_ms": 10582,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 174 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-aungir-testa",
+      "latency_ms": 10390,
+      "ok": false
+    },
+    {
+      "attempts": 3,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of i",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-autismmix-confetti",
+      "latency_ms": 4898,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of i",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-autismmix-pony",
       "latency_ms": 1390,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of i",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-boleromix-illustrious-v290",
+      "latency_ms": 1310,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of i",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-comradeshipxl-v14kc",
+      "latency_ms": 1524,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of i",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-copycat-illustrious-v40",
+      "latency_ms": 1272,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 120 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-copycat-illustrious-v50",
+      "latency_ms": 10372,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 108 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-halcyon-v19",
+      "latency_ms": 10716,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 56 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-ikastrious-v142-stable",
+      "latency_ms": 10301,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 43 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-ikastriousxl-v95",
+      "latency_ms": 10409,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of i",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-illustrij-v10",
+      "latency_ms": 1269,
+      "ok": false
+    },
+    {
+      "attempts": 3,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of i",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-illustrij-v17",
+      "latency_ms": 3827,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of i",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-illustrious-blackmagic-v30",
+      "latency_ms": 1207,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of i",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-illustrious-pencilxl-v320",
+      "latency_ms": 1208,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of i",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-illustriousxl-mmmix-v80",
+      "latency_ms": 1237,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 116 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-illustriousxl-smoothft-solid",
+      "latency_ms": 10615,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 115 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-ilustmix-v40",
+      "latency_ms": 11508,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 50 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-ilustmix-v80",
+      "latency_ms": 10434,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 48 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-janku-illustrious-v21",
+      "latency_ms": 10524,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of i",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-janku-v40",
+      "latency_ms": 1396,
+      "ok": false
+    },
+    {
+      "attempts": 3,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of i",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-kiwimixxl-v3",
+      "latency_ms": 9143,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of i",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-lunarcherrymix-v22-baseillustrxl20",
+      "latency_ms": 1721,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-lunarcherrymix-v23",
+      "latency_ms": 1320,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 120 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-miaomiao-harem-v16g",
+      "latency_ms": 10180,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 98 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-naixl-mmmix-v45",
+      "latency_ms": 10943,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 55 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-naixl-mmmix-v50",
+      "latency_ms": 9846,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 32 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-nonnette-v050",
+      "latency_ms": 10943,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-novaanimexl-ilv100",
+      "latency_ms": 1356,
+      "ok": false
+    },
+    {
+      "attempts": 3,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-novaanimexl-ilv60",
+      "latency_ms": 1288,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-novafurryxl-illustrious-v100",
+      "latency_ms": 1348,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-novaorangexl-v110",
+      "latency_ms": 1291,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-novaorangexl-v90",
+      "latency_ms": 1349,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 117 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-novaunrealxl-v50",
+      "latency_ms": 9942,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 116 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-novaunrealxl-v70",
+      "latency_ms": 10412,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 52 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-obliviousmix-v10",
+      "latency_ms": 9767,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 50 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-oneforallanimew-il",
+      "latency_ms": 10678,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-personastyle-il",
+      "latency_ms": 1344,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-plantmilkmodelsuite-almond",
+      "latency_ms": 1233,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-plantmilkmodelsuite-coconut",
+      "latency_ms": 1307,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-plantmilkmodelsuite-flax",
+      "latency_ms": 1265,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-plantmilkmodelsuite-oat",
+      "latency_ms": 1288,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 116 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-plantmilkmodelsuite-walnut",
+      "latency_ms": 10513,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 116 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-praeclarus-v10",
+      "latency_ms": 10634,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 51 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-praeclarus-v20",
+      "latency_ms": 10484,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 51 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-prefectillustriousxl-v10",
+      "latency_ms": 9963,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-prefectiousxlnsfw-v10",
+      "latency_ms": 1398,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-richyrichmixixl-v1",
+      "latency_ms": 1461,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-sakuraplatinum-v20250309",
+      "latency_ms": 1337,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-shiitakemix-v20",
+      "latency_ms": 1337,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-silencemix-v40",
+      "latency_ms": 1323,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 118 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-ssmixillustrious-v10",
+      "latency_ms": 10334,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 116 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-sudachixlillustrious-v1",
+      "latency_ms": 10674,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 52 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-tanemomix-v2",
+      "latency_ms": 10059,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 49 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-tanemomix-v6",
+      "latency_ms": 10981,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-tastyrice-lingyun-caijing-zhencai-world",
+      "latency_ms": 1535,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-tastyrice-magic-on-paper-anime-guofeng-animation",
+      "latency_ms": 1280,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-tn3-v8",
+      "latency_ms": 1495,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-toonify-illustrious",
+      "latency_ms": 1299,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-turbo",
+      "latency_ms": 1287,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 118 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-vixonsillust-v14",
+      "latency_ms": 9466,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 117 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-waicheapfastani-v10",
+      "latency_ms": 9997,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 53 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-wainsfwillustrious-v130",
+      "latency_ms": 10295,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 54 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-wainsfwillustrious-v140",
+      "latency_ms": 9732,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-zukianimeill-best",
+      "latency_ms": 1352,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-zukianimeill-v40",
+      "latency_ms": 1223,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-zukibestanimemix-v10",
+      "latency_ms": 1206,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-zukicuteill-v60",
+      "latency_ms": 1243,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/sdxl-zukicutemix-v10",
+      "latency_ms": 1294,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 119 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-zukikawaimix-v10",
+      "latency_ms": 10142,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 115 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/sdxl-zukisoftill-v10",
+      "latency_ms": 12402,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 53 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/stable-diffusion-3",
+      "latency_ms": 10747,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 49 seconds.', 'type': 'error', 'param': None, 'code': 4",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/stable-diffusion-3-2b",
+      "latency_ms": 10767,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/stable-diffusion-3.5-large",
+      "latency_ms": 1293,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'This request would exceed your balance of $[amount] credits. Please reduce the number of ",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/stable-diffusion-3.5-turbo",
+      "latency_ms": 1235,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - Error code: 402 - {'detail': {'error': {'message': 'Premium model requires a subscription.', 'type': 'error', 'param': None, 'code': 402}}}. Received Mod",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "electronhub/wan-2.2-image",
+      "latency_ms": 1248,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: RateLimitError: OpenAIException - Error code: 429 - {'detail': {'error': {'message': 'Rate limit exceeded. Try again in 145 seconds.', 'type': 'error', 'param': None, 'code': ",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "electronhub/z-image-turbo",
+      "latency_ms": 11232,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: litellm.RateLimitError: geminiException - {\\n  \\\"error\\\": {\\n    \\\"code\\\": 429,\\n    \\\"message\\\": \\\"You exceeded your current quota, please check your plan and billing details",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "gemini/gemini-2.5-flash-image",
+      "latency_ms": 6367,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: litellm.RateLimitError: geminiException - {\\n  \\\"error\\\": {\\n    \\\"code\\\": 429,\\n    \\\"message\\\": \\\"You exceeded your current quota, please check your plan and billing details",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "gemini/gemini-3-pro-image-preview",
+      "latency_ms": 5863,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 429: {\"error\":{\"message\":\"litellm.RateLimitError: litellm.RateLimitError: geminiException - {\\n  \\\"error\\\": {\\n    \\\"code\\\": 429,\\n    \\\"message\\\": \\\"You exceeded your current quota, please check your plan and billing details",
+      "error_class": "rate_limited",
+      "http_status": 429,
+      "id": "gemini/gemini-3.1-flash-image-preview",
+      "latency_ms": 6279,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: GeminiException BadRequestError - {\\n  \\\"error\\\": {\\n    \\\"code\\\": 400,\\n    \\\"message\\\": \\\"Imagen 3 is only available on paid plans. Please upgrade your account at https://a",
+      "error_class": "wrong_image_payload_or_endpoint",
+      "http_status": 400,
+      "id": "gemini/imagen-4.0-fast-generate-001",
+      "latency_ms": 1160,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: GeminiException BadRequestError - {\\n  \\\"error\\\": {\\n    \\\"code\\\": 400,\\n    \\\"message\\\": \\\"Imagen 3 is only available on paid plans. Please upgrade your account at https://a",
+      "error_class": "wrong_image_payload_or_endpoint",
+      "http_status": 400,
+      "id": "gemini/imagen-4.0-generate-001",
+      "latency_ms": 1107,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: GeminiException BadRequestError - {\\n  \\\"error\\\": {\\n    \\\"code\\\": 400,\\n    \\\"message\\\": \\\"Imagen 3 is only available on paid plans. Please upgrade your account at https://a",
+      "error_class": "wrong_image_payload_or_endpoint",
+      "http_status": 400,
+      "id": "gemini/imagen-4.0-ultra-generate-001",
+      "latency_ms": 1115,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: GeminiException - {\\n  \\\"error\\\": {\\n    \\\"code\\\": 404,\\n    \\\"message\\\": \\\"models/nano-banana-pro-preview is not found for API version v1beta, or is not supported for predict.",
+      "error_class": "model_not_found",
+      "http_status": 404,
+      "id": "gemini/nano-banana-pro-preview",
+      "latency_ms": 1125,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Billing hard limit has been reached.. Received Model Group=openai/chatgpt-image-latest\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code",
+      "error_class": "wrong_image_payload_or_endpoint",
+      "http_status": 400,
+      "id": "openai/chatgpt-image-latest",
+      "latency_ms": 1793,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Billing hard limit has been reached.. Received Model Group=openai/gpt-image-1\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"400\"}}",
+      "error_class": "wrong_image_payload_or_endpoint",
+      "http_status": 400,
+      "id": "openai/gpt-image-1",
+      "latency_ms": 1211,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Billing hard limit has been reached.. Received Model Group=openai/gpt-image-1-mini\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"4",
+      "error_class": "wrong_image_payload_or_endpoint",
+      "http_status": 400,
+      "id": "openai/gpt-image-1-mini",
+      "latency_ms": 1075,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Billing hard limit has been reached.. Received Model Group=openai/gpt-image-1.5\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"400\"",
+      "error_class": "wrong_image_payload_or_endpoint",
+      "http_status": 400,
+      "id": "openai/gpt-image-1.5",
+      "latency_ms": 1141,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Billing hard limit has been reached.. Received Model Group=openai/gpt-image-2\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"400\"}}",
+      "error_class": "wrong_image_payload_or_endpoint",
+      "http_status": 400,
+      "id": "openai/gpt-image-2",
+      "latency_ms": 1155,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Billing hard limit has been reached.. Received Model Group=openai/gpt-image-2-2026-04-21\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"co",
+      "error_class": "wrong_image_payload_or_endpoint",
+      "http_status": 400,
+      "id": "openai/gpt-image-2-2026-04-21",
+      "latency_ms": 1115,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenrouterException - {\\\"error\\\":{\\\"message\\\":\\\"Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so,",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "openrouter/google/gemini-2.5-flash-image",
+      "latency_ms": 2287,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenrouterException - {\\\"error\\\":{\\\"message\\\":\\\"Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so,",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "openrouter/google/gemini-3-pro-image-preview",
+      "latency_ms": 1112,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenrouterException - {\\\"error\\\":{\\\"message\\\":\\\"Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so,",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "openrouter/google/gemini-3.1-flash-image-preview",
+      "latency_ms": 1100,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenrouterException - {\\\"error\\\":{\\\"message\\\":\\\"Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so,",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "openrouter/openai/gpt-5-image",
+      "latency_ms": 1139,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenrouterException - {\\\"error\\\":{\\\"message\\\":\\\"Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so,",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "openrouter/openai/gpt-5-image-mini",
+      "latency_ms": 1046,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenrouterException - {\\\"error\\\":{\\\"message\\\":\\\"Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so,",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "openrouter/openai/gpt-5.4-image-2",
+      "latency_ms": 1154,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"success\":false,\"error\":{\"message\":\"Insufficient balance. This request costs ~[amount] pollen, but your available balance is [amount].\",\"code\":\"PAYMENT_REQUIRED\",\"timestamp\":\"2026-06-06T14:50:13.924Z\"},\"status\":402}",
+      "error_class": "payment_required",
+      "http_status": 402,
+      "id": "pollinations/gptimage",
+      "latency_ms": 1355,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/bfl/flux-2-flex",
+      "latency_ms": 6434,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/bfl/flux-2-klein-4b",
+      "latency_ms": 6807,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/bfl/flux-2-klein-9b",
+      "latency_ms": 6435,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/bfl/flux-2-max",
+      "latency_ms": 6522,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/bfl/flux-2-pro",
+      "latency_ms": 7278,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/bfl/flux-kontext-max",
+      "latency_ms": 6896,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/bfl/flux-kontext-pro",
+      "latency_ms": 6167,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/bfl/flux-pro-1.0-fill",
+      "latency_ms": 6140,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/bfl/flux-pro-1.1",
+      "latency_ms": 5417,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/bfl/flux-pro-1.1-ultra",
+      "latency_ms": 6229,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/bytedance/seedream-4.0",
+      "latency_ms": 6100,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/bytedance/seedream-4.5",
+      "latency_ms": 6060,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/bytedance/seedream-5.0-lite",
+      "latency_ms": 5891,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/google/gemini-2.5-flash-image",
+      "latency_ms": 5345,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/google/gemini-3-pro-image",
+      "latency_ms": 7109,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/google/gemini-3.1-flash-image-preview",
+      "latency_ms": 6533,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/google/imagen-4.0-fast-generate-001",
+      "latency_ms": 6012,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/google/imagen-4.0-generate-001",
+      "latency_ms": 5952,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/google/imagen-4.0-ultra-generate-001",
+      "latency_ms": 6814,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/openai/gpt-image-1",
+      "latency_ms": 6711,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/openai/gpt-image-1-mini",
+      "latency_ms": 7147,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/openai/gpt-image-1.5",
+      "latency_ms": 5464,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/openai/gpt-image-2",
+      "latency_ms": 6603,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/prodia/flux-fast-schnell",
+      "latency_ms": 6692,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/recraft/recraft-v2",
+      "latency_ms": 6386,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/recraft/recraft-v3",
+      "latency_ms": 6070,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/recraft/recraft-v4",
+      "latency_ms": 6547,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/recraft/recraft-v4-pro",
+      "latency_ms": 6397,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/recraft/recraft-v4.1",
+      "latency_ms": 6715,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/recraft/recraft-v4.1-pro",
+      "latency_ms": 5703,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/recraft/recraft-v4.1-utility",
+      "latency_ms": 5408,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/recraft/recraft-v4.1-utility-pro",
+      "latency_ms": 5788,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-c",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "vercel-gateway/xai/grok-imagine-image",
+      "latency_ms": 5801,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 500: {\"error\":{\"message\":\"litellm.InternalServerError: InternalServerError: OpenAIException - An error occurred. Reference: req_1780757673060_b4auwgl at 2026-06-06T14:54:33.063Z. Received Model Group=voidai/flux-kontext-max\\n",
+      "error_class": "provider_server_error",
+      "http_status": 500,
+      "id": "voidai/flux-kontext-max",
+      "latency_ms": 10520,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 500: {\"error\":{\"message\":\"litellm.InternalServerError: InternalServerError: OpenAIException - An error occurred. Reference: req_1780757680058_iios2c5 at 2026-06-06T14:54:40.061Z. Received Model Group=voidai/flux-kontext-pro\\n",
+      "error_class": "provider_server_error",
+      "http_status": 500,
+      "id": "voidai/flux-kontext-pro",
+      "latency_ms": 11427,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 500: {\"error\":{\"message\":\"litellm.InternalServerError: InternalServerError: OpenAIException - An error occurred. Reference: req_1780757740617_vm68zj4 at 2026-06-06T14:55:40.621Z. Received Model Group=voidai/gemini-2.5-flash-i",
+      "error_class": "provider_server_error",
+      "http_status": 500,
+      "id": "voidai/gemini-2.5-flash-image",
+      "latency_ms": 10592,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 500: {\"error\":{\"message\":\"litellm.InternalServerError: InternalServerError: OpenAIException - An error occurred. Reference: req_1780757749497_kavt94t at 2026-06-06T14:55:49.501Z. Received Model Group=voidai/gemini-3-pro-image",
+      "error_class": "provider_server_error",
+      "http_status": 500,
+      "id": "voidai/gemini-3-pro-image-preview",
+      "latency_ms": 10950,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 500: {\"error\":{\"message\":\"litellm.InternalServerError: InternalServerError: OpenAIException - An error occurred. Reference: req_1780757807259_wh3gicw at 2026-06-06T14:56:47.263Z. Received Model Group=voidai/gemini-3.1-flash-i",
+      "error_class": "provider_server_error",
+      "http_status": 500,
+      "id": "voidai/gemini-3.1-flash-image-preview",
+      "latency_ms": 10132,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 500: {\"error\":{\"message\":\"litellm.InternalServerError: InternalServerError: OpenAIException - An error occurred. Reference: req_1780757816555_nl5t6ia at 2026-06-06T14:56:56.861Z. Received Model Group=voidai/gpt-image-1\\nAvail",
+      "error_class": "provider_server_error",
+      "http_status": 500,
+      "id": "voidai/gpt-image-1",
+      "latency_ms": 11134,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 500: {\"error\":{\"message\":\"litellm.InternalServerError: InternalServerError: OpenAIException - An error occurred. Reference: req_1780757875795_ux0uca1 at 2026-06-06T14:57:55.797Z. Received Model Group=voidai/gpt-image-1.5\\nAva",
+      "error_class": "provider_server_error",
+      "http_status": 500,
+      "id": "voidai/gpt-image-1.5",
+      "latency_ms": 11323,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 500: {\"error\":{\"message\":\"litellm.InternalServerError: InternalServerError: OpenAIException - An error occurred. Reference: req_1780757884648_uim0rf3 at 2026-06-06T14:58:04.651Z. Received Model Group=voidai/gpt-image-2\\nAvail",
+      "error_class": "provider_server_error",
+      "http_status": 500,
+      "id": "voidai/gpt-image-2",
+      "latency_ms": 11022,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 500: {\"error\":{\"message\":\"litellm.InternalServerError: InternalServerError: OpenAIException - An error occurred. Reference: req_1780757942522_rf0a3mx at 2026-06-06T14:59:02.527Z. Received Model Group=voidai/midjourney\\nAvaila",
+      "error_class": "provider_server_error",
+      "http_status": 500,
+      "id": "voidai/midjourney",
+      "latency_ms": 10557,
+      "ok": false
+    },
+    {
+      "attempts": 4,
+      "error": "HTTP 500: {\"error\":{\"message\":\"litellm.InternalServerError: InternalServerError: OpenAIException - An error occurred. Reference: req_1780757952760_upilw40 at 2026-06-06T14:59:12.763Z. Received Model Group=voidai/recraft-v3\\nAvaila",
+      "error_class": "provider_server_error",
+      "http_status": 500,
+      "id": "voidai/recraft-v3",
+      "latency_ms": 10574,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - IP address mismatch detected. For security reasons, accounts below the subscriber tier are limited to one IP address. Your current IP address does not match",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "zukijourney/dall-e-3",
+      "latency_ms": 8641,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - IP address mismatch detected. For security reasons, accounts below the subscriber tier are limited to one IP address. Your current IP address does not match",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "zukijourney/flux-1.1-pro",
+      "latency_ms": 9216,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - IP address mismatch detected. For security reasons, accounts below the subscriber tier are limited to one IP address. Your current IP address does not match",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "zukijourney/flux-1.1-pro-ultra",
+      "latency_ms": 9378,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - IP address mismatch detected. For security reasons, accounts below the subscriber tier are limited to one IP address. Your current IP address does not match",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "zukijourney/flux-1.1-pro-ultra-raw",
+      "latency_ms": 9128,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - IP address mismatch detected. For security reasons, accounts below the subscriber tier are limited to one IP address. Your current IP address does not match",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "zukijourney/flux-dev",
+      "latency_ms": 7904,
+      "ok": false
+    },
+    {
+      "attempts": 2,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - IP address mismatch detected. For security reasons, accounts below the subscriber tier are limited to one IP address. Your current IP address does not match",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "zukijourney/flux-pro",
+      "latency_ms": 15653,
+      "ok": false
+    },
+    {
+      "attempts": 2,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - IP address mismatch detected. For security reasons, accounts below the subscriber tier are limited to one IP address. Your current IP address does not match",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "zukijourney/flux-schnell",
+      "latency_ms": 12437,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - IP address mismatch detected. For security reasons, accounts below the subscriber tier are limited to one IP address. Your current IP address does not match",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "zukijourney/grok-2a",
+      "latency_ms": 13898,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - IP address mismatch detected. For security reasons, accounts below the subscriber tier are limited to one IP address. Your current IP address does not match",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "zukijourney/playground-v2.5",
+      "latency_ms": 13458,
+      "ok": false
+    },
+    {
+      "attempts": 2,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - IP address mismatch detected. For security reasons, accounts below the subscriber tier are limited to one IP address. Your current IP address does not match",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "zukijourney/playground-v3",
+      "latency_ms": 15926,
+      "ok": false
+    },
+    {
+      "attempts": 2,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - IP address mismatch detected. For security reasons, accounts below the subscriber tier are limited to one IP address. Your current IP address does not match",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "zukijourney/pollinations",
+      "latency_ms": 18260,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - IP address mismatch detected. For security reasons, accounts below the subscriber tier are limited to one IP address. Your current IP address does not match",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "zukijourney/stable-diffusion-3-medium",
+      "latency_ms": 10792,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - IP address mismatch detected. For security reasons, accounts below the subscriber tier are limited to one IP address. Your current IP address does not match",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "zukijourney/stable-diffusion-3.5-large",
+      "latency_ms": 12704,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - IP address mismatch detected. For security reasons, accounts below the subscriber tier are limited to one IP address. Your current IP address does not match",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "zukijourney/stable-diffusion-3.5-large-turbo",
+      "latency_ms": 12108,
+      "ok": false
+    },
+    {
+      "attempts": 2,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - IP address mismatch detected. For security reasons, accounts below the subscriber tier are limited to one IP address. Your current IP address does not match",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "zukijourney/stable-image-core",
+      "latency_ms": 18782,
+      "ok": false
+    },
+    {
+      "attempts": 2,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - IP address mismatch detected. For security reasons, accounts below the subscriber tier are limited to one IP address. Your current IP address does not match",
+      "error_class": "provider_forbidden",
+      "http_status": 403,
+      "id": "zukijourney/stable-image-ultra",
+      "latency_ms": 13256,
+      "ok": false
+    }
+  ],
+  "image_failure_samples": [
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/alibaba/qwen-image",
+      "latency_ms": 9417,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/alibaba/wan-2-6-image",
+      "latency_ms": 8611,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/alibaba/wan2.2-t2i-flash",
+      "latency_ms": 7239,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/alibaba/wan2.2-t2i-plus",
+      "latency_ms": 5709,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/alibaba/wan2.5-t2i-preview",
+      "latency_ms": 6229,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/alibaba/z-image-turbo",
+      "latency_ms": 7815,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/alibaba/z-image-turbo-lora",
+      "latency_ms": 6779,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/blackforestlabs/flux-2",
+      "latency_ms": 5807,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/blackforestlabs/flux-2-lora",
+      "latency_ms": 6433,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/blackforestlabs/flux-2-max",
+      "latency_ms": 6378,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/blackforestlabs/flux-2-pro",
+      "latency_ms": 6083,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/bytedance/seedream-3.0",
+      "latency_ms": 6651,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/bytedance/seedream-4-5",
+      "latency_ms": 6403,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/bytedance/seedream-5-0-lite-preview",
+      "latency_ms": 5937,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/bytedance/seedream-v4-text-to-image",
+      "latency_ms": 6369,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/dall-e-2",
+      "latency_ms": 6312,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/dall-e-3",
+      "latency_ms": 6746,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/flux-pro",
+      "latency_ms": 5751,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/flux-pro/v1.1",
+      "latency_ms": 6224,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/flux-pro/v1.1-ultra",
+      "latency_ms": 6995,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/flux-realism",
+      "latency_ms": 6113,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/flux/dev",
+      "latency_ms": 6580,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/flux/kontext-max/text-to-image",
+      "latency_ms": 6296,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/flux/kontext-pro/text-to-image",
+      "latency_ms": 6334,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/flux/schnell",
+      "latency_ms": 6288,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/flux/srpo",
+      "latency_ms": 6318,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/google/gemini-2.5-flash-image",
+      "latency_ms": 5799,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/google/gemini-3-pro-image-preview",
+      "latency_ms": 6235,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/google/imagen-4.0-fast-generate-001",
+      "latency_ms": 5660,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/google/imagen-4.0-generate-001",
+      "latency_ms": 6578,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/google/imagen-4.0-ultra-generate-001",
+      "latency_ms": 6555,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/google/imagen4/preview",
+      "latency_ms": 6137,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/google/nano-banana-pro",
+      "latency_ms": 6795,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/hunyuan/hunyuan-image-v3-text-to-image",
+      "latency_ms": 5828,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/imagen-3.0-generate-002",
+      "latency_ms": 6623,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Invalid payload provided. Received Model Group=aimlapi/klingai/image-o1\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"400\"}}",
+      "error_class": "wrong_image_payload_or_endpoint",
+      "http_status": 400,
+      "id": "aimlapi/klingai/image-o1",
+      "latency_ms": 3895,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Invalid payload provided. Received Model Group=aimlapi/magic/image-to-3d\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"400\"}}",
+      "error_class": "wrong_image_payload_or_endpoint",
+      "http_status": 400,
+      "id": "aimlapi/magic/image-to-3d",
+      "latency_ms": 1364,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/openai/gpt-image-1",
+      "latency_ms": 5690,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/openai/gpt-image-1-5",
+      "latency_ms": 5848,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/openai/gpt-image-1-mini",
+      "latency_ms": 5844,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/recraft-v3",
+      "latency_ms": 6130,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/reve/create-image",
+      "latency_ms": 5876,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/sber-ai/kandinsky5-distill-t2v",
+      "latency_ms": 6341,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/sber-ai/kandinsky5-t2v",
+      "latency_ms": 5742,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/stable-diffusion-v3-medium",
+      "latency_ms": 5982,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/stable-diffusion-v35-large",
+      "latency_ms": 6316,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/x-ai/grok-imagine-image",
+      "latency_ms": 5787,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "error_class": "provider_funds_or_billing",
+      "http_status": 403,
+      "id": "aimlapi/x-ai/grok-imagine-image-pro",
+      "latency_ms": 6120,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'multipart' (17cc6e99-9b37-4ed7-a778-44969eda8b81)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "error_class": "wrong_image_payload_or_endpoint",
+      "http_status": 400,
+      "id": "cloudflare/@cf/black-forest-labs/flux-2-dev",
+      "latency_ms": 1116,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'multipart' (2e2baee6-ac93-41c9-999a-565964fdd7e9)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "error_class": "wrong_image_payload_or_endpoint",
+      "http_status": 400,
+      "id": "cloudflare/@cf/black-forest-labs/flux-2-klein-4b",
+      "latency_ms": 1096,
       "ok": false
     }
   ],
   "image_failure_summary": [
     {
-      "count": 117,
-      "error": "HTTP 429"
-    },
-    {
-      "count": 71,
+      "count": 95,
       "error": "HTTP 403"
     },
     {
-      "count": 24,
-      "error": "HTTP 400"
-    },
-    {
-      "count": 9,
-      "error": "HTTP 500"
-    },
-    {
-      "count": 8,
+      "count": 66,
       "error": "HTTP 402"
     },
     {
-      "count": 1,
+      "count": 54,
+      "error": "HTTP 429"
+    },
+    {
+      "count": 21,
+      "error": "HTTP 400"
+    },
+    {
+      "count": 10,
+      "error": "HTTP 500"
+    },
+    {
+      "count": 6,
       "error": "missing image data in successful response"
+    },
+    {
+      "count": 1,
+      "error": "HTTP 404"
     }
   ],
   "image_models": [
     {
       "attempts": 1,
       "http_status": 200,
+      "id": "cloudflare/@cf/black-forest-labs/flux-1-schnell",
+      "latency_ms": 4198
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
       "id": "cloudflare/@cf/bytedance/stable-diffusion-xl-lightning",
-      "latency_ms": 10700
+      "latency_ms": 4974
     },
     {
       "attempts": 1,
       "http_status": 200,
       "id": "cloudflare/@cf/stabilityai/stable-diffusion-xl-base-1.0",
-      "latency_ms": 24107
+      "latency_ms": 15042
     },
     {
       "attempts": 1,
       "http_status": 200,
-      "id": "electronhub/sdxl-lunarcherrymix-v22-baseillustrxl20",
-      "latency_ms": 46921
+      "id": "electronhub/sdxl",
+      "latency_ms": 13263
     },
     {
       "attempts": 1,
       "http_status": 200,
-      "id": "electronhub/sdxl-lunarcherrymix-v23",
-      "latency_ms": 34461
+      "id": "electronhub/sdxl-lightning",
+      "latency_ms": 11721
     },
     {
       "attempts": 1,
+      "carried_from_previous": true,
       "http_status": 200,
       "id": "electronhub/sdxl-miaomiao-harem-v16g",
+      "last_probe_checked_at": "2026-06-06T14:06:25.819359Z",
+      "last_probe_error_class": "rate_limited",
+      "last_probe_http_status": 429,
       "latency_ms": 21564
     },
     {
       "attempts": 1,
+      "carried_from_previous": true,
       "http_status": 200,
       "id": "electronhub/sdxl-naixl-mmmix-v45",
+      "last_probe_checked_at": "2026-06-06T14:06:25.819359Z",
+      "last_probe_error_class": "rate_limited",
+      "last_probe_http_status": 429,
       "latency_ms": 41105
     },
     {
       "attempts": 1,
+      "carried_from_previous": true,
       "http_status": 200,
       "id": "electronhub/sdxl-naixl-mmmix-v50",
+      "last_probe_checked_at": "2026-06-06T14:06:25.819359Z",
+      "last_probe_error_class": "rate_limited",
+      "last_probe_http_status": 429,
       "latency_ms": 26703
     },
     {
       "attempts": 1,
       "http_status": 200,
       "id": "pollinations/flux",
-      "latency_ms": 2589
+      "latency_ms": 2421
     },
     {
-      "attempts": 1,
-      "http_status": 200,
-      "id": "pollinations/gptimage",
-      "latency_ms": 16583
-    },
-    {
-      "attempts": 1,
+      "attempts": 3,
       "http_status": 200,
       "id": "pollinations/zimage",
-      "latency_ms": 4500
+      "latency_ms": 4830
     }
   ],
   "image_prompt": "a tiny blue square on a white background",
   "image_size": null,
-  "image_target_models": 240,
-  "image_tested_models": 240,
-  "image_total_models": 240,
+  "image_target_models": 260,
+  "image_tested_models": 260,
+  "image_total_models": 260,
   "image_usable_count": 10,
   "image_usable_model_ids": [
+    "cloudflare/@cf/black-forest-labs/flux-1-schnell",
     "cloudflare/@cf/bytedance/stable-diffusion-xl-lightning",
     "cloudflare/@cf/stabilityai/stable-diffusion-xl-base-1.0",
-    "electronhub/sdxl-lunarcherrymix-v22-baseillustrxl20",
-    "electronhub/sdxl-lunarcherrymix-v23",
+    "electronhub/sdxl",
+    "electronhub/sdxl-lightning",
     "electronhub/sdxl-miaomiao-harem-v16g",
     "electronhub/sdxl-naixl-mmmix-v45",
     "electronhub/sdxl-naixl-mmmix-v50",
     "pollinations/flux",
-    "pollinations/gptimage",
     "pollinations/zimage"
   ],
   "max_tokens": 1,

@@ -439,6 +439,14 @@ def load_usable_metadata() -> dict[str, dict[str, Any]]:
         item["image_usable_source"] = "config/usable-models.json"
         item["image_usable_latency_ms"] = model.get("latency_ms")
         item["image_usable_http_status"] = model.get("http_status")
+        if "carried_from_previous" in model:
+            item["image_usable_carried_from_previous"] = model.get("carried_from_previous")
+        if "last_probe_error_class" in model:
+            item["image_usable_last_probe_error_class"] = model.get("last_probe_error_class")
+        if "last_probe_http_status" in model:
+            item["image_usable_last_probe_http_status"] = model.get("last_probe_http_status")
+        if "last_probe_checked_at" in model:
+            item["image_usable_last_probe_checked_at"] = model.get("last_probe_checked_at")
 
     usable_metadata_cache = metadata
     return metadata
@@ -485,6 +493,10 @@ def merge_model_metadata(raw_model: dict[str, Any], metadata: dict[str, Any]) ->
         "image_usable_source",
         "image_usable_latency_ms",
         "image_usable_http_status",
+        "image_usable_carried_from_previous",
+        "image_usable_last_probe_error_class",
+        "image_usable_last_probe_http_status",
+        "image_usable_last_probe_checked_at",
     ):
         if key in metadata and key not in enriched:
             enriched[key] = metadata[key]
