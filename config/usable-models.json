@@ -443,6 +443,127 @@
       "error": "TimeoutError: The read operation timed out"
     }
   ],
+  "image_base_url": "https://awdafw-litellm-huggingface-template.hf.space/v1",
+  "image_checked_at": "2026-06-06T10:52:17.407022Z",
+  "image_complete": true,
+  "image_failure_count": 7,
+  "image_failure_samples": [
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'multipart' (f69996b0-3966-4858-b7dd-62f248a04d88)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "http_status": 400,
+      "id": "cloudflare/@cf/black-forest-labs/flux-2-dev",
+      "latency_ms": 1235,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'multipart' (095bd3b1-25db-4fdb-b27e-b25200372c53)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "http_status": 400,
+      "id": "cloudflare/@cf/black-forest-labs/flux-2-klein-4b",
+      "latency_ms": 1081,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'multipart' (5ece6028-feb8-4dc7-9a5c-026392a08364)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "http_status": 400,
+      "id": "cloudflare/@cf/black-forest-labs/flux-2-klein-9b",
+      "latency_ms": 1191,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "missing image data in successful response",
+      "http_status": 200,
+      "id": "cloudflare/@cf/deepgram/flux",
+      "latency_ms": 1353,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: AiError: Model input is not valid: missing required input image (568768a4-93b0-4060-8bb6-517b93b6e461)\",\"code\":3030}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "http_status": 400,
+      "id": "cloudflare/@cf/runwayml/stable-diffusion-v1-5-img2img",
+      "latency_ms": 1352,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: AiError: Model input is not valid: missing required input image (afeb7d32-f89b-448e-9ed6-37c1c21027a1)\",\"code\":3030}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "http_status": 400,
+      "id": "cloudflare/@cf/runwayml/stable-diffusion-v1-5-inpainting",
+      "latency_ms": 1353,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 402: {\"success\":false,\"error\":{\"message\":\"Insufficient balance. This request costs ~0.0099 pollen, but your available balance is 0.0083.\",\"code\":\"PAYMENT_REQUIRED\",\"timestamp\":\"2026-06-06T10:52:48.351Z\"},\"status\":402}",
+      "http_status": 402,
+      "id": "pollinations/gptimage",
+      "latency_ms": 1492,
+      "ok": false
+    }
+  ],
+  "image_failure_summary": [
+    {
+      "count": 5,
+      "error": "HTTP 400"
+    },
+    {
+      "count": 1,
+      "error": "HTTP 402"
+    },
+    {
+      "count": 1,
+      "error": "missing image data in successful response"
+    }
+  ],
+  "image_models": [
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/black-forest-labs/flux-1-schnell",
+      "latency_ms": 6693
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/bytedance/stable-diffusion-xl-lightning",
+      "latency_ms": 10182
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/stabilityai/stable-diffusion-xl-base-1.0",
+      "latency_ms": 101571
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/flux",
+      "latency_ms": 2443
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/zimage",
+      "latency_ms": 6447
+    }
+  ],
+  "image_prompt": "a tiny blue square on a white background",
+  "image_size": null,
+  "image_target_models": 12,
+  "image_tested_models": 12,
+  "image_total_models": 240,
+  "image_usable_count": 5,
+  "image_usable_model_ids": [
+    "cloudflare/@cf/black-forest-labs/flux-1-schnell",
+    "cloudflare/@cf/bytedance/stable-diffusion-xl-lightning",
+    "cloudflare/@cf/stabilityai/stable-diffusion-xl-base-1.0",
+    "pollinations/flux",
+    "pollinations/zimage"
+  ],
   "max_tokens": 1,
   "models": [
     {

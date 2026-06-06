@@ -403,6 +403,43 @@ def load_usable_metadata() -> dict[str, dict[str, Any]]:
         item["usable_latency_ms"] = model.get("latency_ms")
         item["usable_http_status"] = model.get("http_status")
 
+    image_checked_at = payload.get("image_checked_at")
+    for model_id in payload.get("image_usable_model_ids", []):
+        if not isinstance(model_id, str) or not model_id.strip():
+            continue
+        item = metadata.setdefault(model_id.strip(), {})
+        item.update(
+            {
+                "image_usable": True,
+                "verified_image_usable": True,
+                "image_usable_checked_at": image_checked_at,
+                "image_usable_source": "config/usable-models.json",
+            }
+        )
+
+    for model in payload.get("image_models", []):
+        if not isinstance(model, dict):
+            continue
+        model_id = model.get("id")
+        if not isinstance(model_id, str) or not model_id.strip():
+            continue
+        key = model_id.strip()
+        item = metadata.setdefault(
+            key,
+            {
+                "image_usable": True,
+                "verified_image_usable": True,
+                "image_usable_checked_at": image_checked_at,
+                "image_usable_source": "config/usable-models.json",
+            },
+        )
+        item["image_usable"] = True
+        item["verified_image_usable"] = True
+        item["image_usable_checked_at"] = image_checked_at
+        item["image_usable_source"] = "config/usable-models.json"
+        item["image_usable_latency_ms"] = model.get("latency_ms")
+        item["image_usable_http_status"] = model.get("http_status")
+
     usable_metadata_cache = metadata
     return metadata
 
@@ -442,6 +479,12 @@ def merge_model_metadata(raw_model: dict[str, Any], metadata: dict[str, Any]) ->
         "usable_source",
         "usable_latency_ms",
         "usable_http_status",
+        "image_usable",
+        "verified_image_usable",
+        "image_usable_checked_at",
+        "image_usable_source",
+        "image_usable_latency_ms",
+        "image_usable_http_status",
     ):
         if key in metadata and key not in enriched:
             enriched[key] = metadata[key]
