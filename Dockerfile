@@ -6,6 +6,7 @@ USER root
 
 COPY config/config.yaml /app/config/config.yaml
 COPY config/model-catalog.json /app/config/model-catalog.json
+COPY config/usable-models.json /app/config/usable-models.json
 COPY scripts/proxy_app.py /app/scripts/proxy_app.py
 COPY scripts/render-config.py /app/scripts/render-config.py
 COPY scripts/start-litellm.sh /app/scripts/start-litellm.sh

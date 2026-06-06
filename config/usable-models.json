@@ -1,0 +1,2214 @@
+{
+  "base_url": "https://awdafw-litellm-huggingface-template.hf.space/v1",
+  "checked_at": "2026-06-06T05:24:10.448104Z",
+  "complete": true,
+  "failure_count": 3564,
+  "failure_samples": [
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-amalthea-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"40",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-amalthea-en",
+      "latency_ms": 2113,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-andromeda-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"4",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-andromeda-en",
+      "latency_ms": 1950,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-apollo-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-apollo-en",
+      "latency_ms": 2113,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-arcas-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-arcas-en",
+      "latency_ms": 2113,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-aries-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-aries-en",
+      "latency_ms": 2116,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-asteria-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-asteria-en",
+      "latency_ms": 2113,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-athena-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-athena-en",
+      "latency_ms": 2111,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-atlas-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-atlas-en",
+      "latency_ms": 2116,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-aurora-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-aurora-en",
+      "latency_ms": 1401,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-callista-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"40",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-callista-en",
+      "latency_ms": 2002,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-celeste-es\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-celeste-es",
+      "latency_ms": 2001,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-cora-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-cora-en",
+      "latency_ms": 1998,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-cordelia-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"40",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-cordelia-en",
+      "latency_ms": 1836,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-delia-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-delia-en",
+      "latency_ms": 1996,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-draco-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-draco-en",
+      "latency_ms": 1997,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-electra-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-electra-en",
+      "latency_ms": 1975,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-estrella-es\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"40",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-estrella-es",
+      "latency_ms": 1347,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-harmonia-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"40",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-harmonia-en",
+      "latency_ms": 1421,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-helena-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-helena-en",
+      "latency_ms": 1844,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-hera-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-hera-en",
+      "latency_ms": 1994,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-hermes-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-hermes-en",
+      "latency_ms": 1976,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-hyperion-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"40",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-hyperion-en",
+      "latency_ms": 1993,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-iris-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-iris-en",
+      "latency_ms": 1993,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-janus-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-janus-en",
+      "latency_ms": 1992,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-juno-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-juno-en",
+      "latency_ms": 1642,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-jupiter-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-jupiter-en",
+      "latency_ms": 1307,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-luna-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-luna-en",
+      "latency_ms": 1395,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-mars-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-mars-en",
+      "latency_ms": 1582,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-minerva-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-minerva-en",
+      "latency_ms": 1640,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-neptune-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-neptune-en",
+      "latency_ms": 1644,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-nestor-es\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-nestor-es",
+      "latency_ms": 1630,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-odysseus-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"40",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-odysseus-en",
+      "latency_ms": 1277,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-ophelia-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-ophelia-en",
+      "latency_ms": 1336,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-orion-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-orion-en",
+      "latency_ms": 1377,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-orpheus-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-orpheus-en",
+      "latency_ms": 1755,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-pandora-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-pandora-en",
+      "latency_ms": 1735,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-phoebe-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-phoebe-en",
+      "latency_ms": 1808,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-pluto-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-pluto-en",
+      "latency_ms": 1806,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-saturn-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-saturn-en",
+      "latency_ms": 1736,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-selene-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-selene-en",
+      "latency_ms": 1615,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-thalia-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-thalia-en",
+      "latency_ms": 1202,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-theia-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-theia-en",
+      "latency_ms": 1190,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-vesta-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-vesta-en",
+      "latency_ms": 1429,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-2-zeus-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-2-zeus-en",
+      "latency_ms": 1325,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-angus-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-angus-en",
+      "latency_ms": 1643,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-arcas-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-arcas-en",
+      "latency_ms": 1678,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-asteria-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-asteria-en",
+      "latency_ms": 1628,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-athena-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-athena-en",
+      "latency_ms": 1676,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-helios-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-helios-en",
+      "latency_ms": 1645,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 404: {\"error\":{\"message\":\"litellm.NotFoundError: NotFoundError: OpenAIException - Model not found. Received Model Group=aimlapi/#g1_aura-hera-en\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"404\"}}",
+      "http_status": 404,
+      "id": "aimlapi/#g1_aura-hera-en",
+      "latency_ms": 1380,
+      "ok": false
+    }
+  ],
+  "failure_summary": [
+    {
+      "count": 1026,
+      "error": "HTTP 402"
+    },
+    {
+      "count": 852,
+      "error": "HTTP 429"
+    },
+    {
+      "count": 716,
+      "error": "HTTP 400"
+    },
+    {
+      "count": 628,
+      "error": "HTTP 403"
+    },
+    {
+      "count": 183,
+      "error": "HTTP 404"
+    },
+    {
+      "count": 149,
+      "error": "HTTP 500"
+    },
+    {
+      "count": 8,
+      "error": "HTTP 401"
+    },
+    {
+      "count": 1,
+      "error": "HTTP 410"
+    },
+    {
+      "count": 1,
+      "error": "TimeoutError: The read operation timed out"
+    }
+  ],
+  "max_tokens": 1,
+  "models": [
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cerebras/gpt-oss-120b",
+      "latency_ms": 2073
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cerebras/zai-glm-4.7",
+      "latency_ms": 1349
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
+      "latency_ms": 1349
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/google/gemma-2b-it-lora",
+      "latency_ms": 1602
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/google/gemma-3-12b-it",
+      "latency_ms": 1388
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/google/gemma-7b-it-lora",
+      "latency_ms": 1552
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/meta-llama/llama-2-7b-chat-hf-lora",
+      "latency_ms": 1753
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/meta/llama-3.1-8b-instruct-fp8",
+      "latency_ms": 1527
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/meta/llama-3.2-1b-instruct",
+      "latency_ms": 1549
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/meta/llama-3.2-3b-instruct",
+      "latency_ms": 1504
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+      "latency_ms": 1394
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/meta/llama-4-scout-17b-16e-instruct",
+      "latency_ms": 1558
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/meta/llama-guard-3-8b",
+      "latency_ms": 1518
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/mistral/mistral-7b-instruct-v0.1",
+      "latency_ms": 1619
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/mistral/mistral-7b-instruct-v0.2-lora",
+      "latency_ms": 2126
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/mistralai/mistral-small-3.1-24b-instruct",
+      "latency_ms": 1388
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/qwen/qwen2.5-coder-32b-instruct",
+      "latency_ms": 1482
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@cf/qwen/qwq-32b",
+      "latency_ms": 1335
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@hf/google/gemma-7b-it",
+      "latency_ms": 1790
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cloudflare/@hf/mistral/mistral-7b-instruct-v0.2",
+      "latency_ms": 1545
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cohere/c4ai-aya-expanse-32b",
+      "latency_ms": 1518
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cohere/c4ai-aya-vision-32b",
+      "latency_ms": 1494
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cohere/command-a-03-2025",
+      "latency_ms": 1482
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cohere/command-a-reasoning-08-2025",
+      "latency_ms": 1640
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cohere/command-a-translate-08-2025",
+      "latency_ms": 1448
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cohere/command-a-vision-07-2025",
+      "latency_ms": 1340
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cohere/command-r-08-2024",
+      "latency_ms": 1314
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cohere/command-r-plus-08-2024",
+      "latency_ms": 1447
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cohere/command-r7b-12-2024",
+      "latency_ms": 1329
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "cohere/command-r7b-arabic-02-2025",
+      "latency_ms": 1311
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/glm-4.5-air",
+      "latency_ms": 6935
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/llama-3-typhoon-v1.5-8b-instruct",
+      "latency_ms": 28741
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/llama-3.1-405b",
+      "latency_ms": 9557
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/llama-3.1-70b",
+      "latency_ms": 9061
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/llama-3.1-8b",
+      "latency_ms": 9596
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/llama-3.1-8b-lexi-uncensored-v2",
+      "latency_ms": 10925
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/o3-high",
+      "latency_ms": 4641
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/o3-low",
+      "latency_ms": 2883
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/o3-mini",
+      "latency_ms": 4772
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/o3-mini-high",
+      "latency_ms": 2754
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/o3-mini-low",
+      "latency_ms": 2387
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/trinity-mini",
+      "latency_ms": 2974
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/voxtral-mini-2507",
+      "latency_ms": 1537
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "exa/exa",
+      "latency_ms": 3269
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "exa/exa-research",
+      "latency_ms": 18838
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "gemini-flash-1",
+      "latency_ms": 1753
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "gemini-flash-3",
+      "latency_ms": 1664
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "gemini-flash-lite-1",
+      "latency_ms": 1536
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "gemini-flash-lite-3",
+      "latency_ms": 1528
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "gemini/gemini-2.5-flash",
+      "latency_ms": 1778
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "gemini/gemini-2.5-flash-lite",
+      "latency_ms": 1466
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "gemini/gemini-3-flash-preview",
+      "latency_ms": 3681
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "gemini/gemini-3.1-flash-lite",
+      "latency_ms": 1582
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "gemini/gemini-3.1-flash-lite-preview",
+      "latency_ms": 1684
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "gemini/gemini-flash-latest",
+      "latency_ms": 1753
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "gemini/gemini-flash-lite-latest",
+      "latency_ms": 1652
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "gemini/gemini-robotics-er-1.6-preview",
+      "latency_ms": 2001
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "gemini/gemma-4-26b-a4b-it",
+      "latency_ms": 1591
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "gemini/gemma-4-31b-it",
+      "latency_ms": 1731
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "genlabs/deca-2.5-mini",
+      "latency_ms": 7214
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "genlabs/deca-2.5-pro",
+      "latency_ms": 6288
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "genlabs/deca-2.5-ultra",
+      "latency_ms": 6751
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "groq/allam-2-7b",
+      "latency_ms": 1582
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "groq/groq/compound",
+      "latency_ms": 2136
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "groq/groq/compound-mini",
+      "latency_ms": 1561
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "groq/llama-3.1-8b-instant",
+      "latency_ms": 1344
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "groq/llama-3.3-70b-versatile",
+      "latency_ms": 1333
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "groq/meta-llama/llama-4-scout-17b-16e-instruct",
+      "latency_ms": 1630
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "groq/meta-llama/llama-prompt-guard-2-22m",
+      "latency_ms": 1399
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "groq/meta-llama/llama-prompt-guard-2-86m",
+      "latency_ms": 1370
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "groq/openai/gpt-oss-120b",
+      "latency_ms": 1440
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "groq/openai/gpt-oss-20b",
+      "latency_ms": 1431
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "groq/openai/gpt-oss-safeguard-20b",
+      "latency_ms": 1386
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "groq/qwen/qwen3-32b",
+      "latency_ms": 1273
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/CohereLabs/aya-expanse-32b",
+      "latency_ms": 1456
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/CohereLabs/aya-vision-32b",
+      "latency_ms": 1407
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/CohereLabs/c4ai-command-a-03-2025",
+      "latency_ms": 1262
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/CohereLabs/c4ai-command-r-08-2024",
+      "latency_ms": 1362
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/CohereLabs/c4ai-command-r7b-arabic-02-2025",
+      "latency_ms": 1364
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/CohereLabs/command-a-reasoning-08-2025",
+      "latency_ms": 1352
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/CohereLabs/command-a-translate-08-2025",
+      "latency_ms": 1379
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/CohereLabs/command-a-vision-07-2025",
+      "latency_ms": 1235
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/CohereLabs/tiny-aya-earth",
+      "latency_ms": 1560
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/CohereLabs/tiny-aya-global",
+      "latency_ms": 1373
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/CohereLabs/tiny-aya-water",
+      "latency_ms": 1373
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/EssentialAI/rnj-1-instruct",
+      "latency_ms": 1345
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/MiniMaxAI/MiniMax-M2",
+      "latency_ms": 2474
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/MiniMaxAI/MiniMax-M2.1",
+      "latency_ms": 2765
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/MiniMaxAI/MiniMax-M2.5",
+      "latency_ms": 2009
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/Qwen/QwQ-32B",
+      "latency_ms": 1877
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/Qwen/Qwen2.5-72B-Instruct",
+      "latency_ms": 5813
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/Qwen/Qwen2.5-7B-Instruct",
+      "latency_ms": 1706
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/Qwen/Qwen2.5-Coder-32B-Instruct",
+      "latency_ms": 1737
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface/katanemo/Arch-Router-1.5B",
+      "latency_ms": 1423
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/CohereLabs/aya-expanse-32b",
+      "latency_ms": 1381
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/CohereLabs/aya-vision-32b",
+      "latency_ms": 1384
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/CohereLabs/c4ai-command-a-03-2025",
+      "latency_ms": 1323
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/CohereLabs/c4ai-command-r-08-2024",
+      "latency_ms": 1414
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/CohereLabs/c4ai-command-r7b-arabic-02-2025",
+      "latency_ms": 1363
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/CohereLabs/command-a-reasoning-08-2025",
+      "latency_ms": 1407
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/CohereLabs/command-a-translate-08-2025",
+      "latency_ms": 1299
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/CohereLabs/command-a-vision-07-2025",
+      "latency_ms": 1302
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/CohereLabs/tiny-aya-earth",
+      "latency_ms": 1488
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/CohereLabs/tiny-aya-global",
+      "latency_ms": 1377
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/CohereLabs/tiny-aya-water",
+      "latency_ms": 1420
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/EssentialAI/rnj-1-instruct",
+      "latency_ms": 1522
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/MiniMaxAI/MiniMax-M2",
+      "latency_ms": 2164
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/MiniMaxAI/MiniMax-M2.1",
+      "latency_ms": 2602
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/MiniMaxAI/MiniMax-M2.5",
+      "latency_ms": 1728
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/Qwen/QwQ-32B",
+      "latency_ms": 1883
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/Qwen/Qwen2.5-72B-Instruct",
+      "latency_ms": 4230
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/Qwen/Qwen2.5-7B-Instruct",
+      "latency_ms": 1319
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/Qwen/Qwen2.5-Coder-7B-Instruct",
+      "latency_ms": 1763
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/deepseek-ai/DeepSeek-V3",
+      "latency_ms": 2666
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/deepseek-ai/DeepSeek-V3-0324",
+      "latency_ms": 1932
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/deepseek-ai/DeepSeek-V3.1",
+      "latency_ms": 2559
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/deepseek-ai/DeepSeek-V3.1-Terminus",
+      "latency_ms": 2771
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/deepseek-ai/DeepSeek-V3.2",
+      "latency_ms": 2447
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/deepseek-ai/DeepSeek-V3.2-Exp",
+      "latency_ms": 4037
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/deepseek-ai/DeepSeek-V4-Flash",
+      "latency_ms": 1619
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/deepseek-ai/DeepSeek-V4-Pro",
+      "latency_ms": 1861
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/google/gemma-3-27b-it",
+      "latency_ms": 1501
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/google/gemma-3n-E4B-it",
+      "latency_ms": 1806
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/katanemo/Arch-Router-1.5B",
+      "latency_ms": 1260
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/meta-llama/Llama-3.1-70B-Instruct",
+      "latency_ms": 1323
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/meta-llama/Llama-3.1-8B-Instruct",
+      "latency_ms": 1800
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/meta-llama/Llama-3.3-70B-Instruct",
+      "latency_ms": 1306
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "latency_ms": 1477
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/meta-llama/Llama-Guard-4-12B",
+      "latency_ms": 1369
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/meta-llama/Meta-Llama-3-70B-Instruct",
+      "latency_ms": 1694
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/meta-llama/Meta-Llama-3-8B-Instruct",
+      "latency_ms": 1857
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/moonshotai/Kimi-K2-Instruct",
+      "latency_ms": 2697
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag19/moonshotai/Kimi-K2-Instruct-0905",
+      "latency_ms": 2792
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/CohereLabs/aya-expanse-32b",
+      "latency_ms": 1690
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/CohereLabs/aya-vision-32b",
+      "latency_ms": 1667
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/CohereLabs/c4ai-command-a-03-2025",
+      "latency_ms": 1508
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/CohereLabs/c4ai-command-r-08-2024",
+      "latency_ms": 1560
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/CohereLabs/c4ai-command-r7b-arabic-02-2025",
+      "latency_ms": 1677
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/CohereLabs/command-a-reasoning-08-2025",
+      "latency_ms": 1555
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/CohereLabs/command-a-translate-08-2025",
+      "latency_ms": 1448
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/CohereLabs/command-a-vision-07-2025",
+      "latency_ms": 1420
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/CohereLabs/tiny-aya-earth",
+      "latency_ms": 1562
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/CohereLabs/tiny-aya-global",
+      "latency_ms": 1400
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/CohereLabs/tiny-aya-water",
+      "latency_ms": 1357
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/EssentialAI/rnj-1-instruct",
+      "latency_ms": 1497
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/MiniMaxAI/MiniMax-M2",
+      "latency_ms": 2428
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/MiniMaxAI/MiniMax-M2.1",
+      "latency_ms": 2387
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/MiniMaxAI/MiniMax-M2.5",
+      "latency_ms": 1904
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/Qwen/QwQ-32B",
+      "latency_ms": 1942
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/Qwen/Qwen2.5-72B-Instruct",
+      "latency_ms": 3344
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/Qwen/Qwen2.5-7B-Instruct",
+      "latency_ms": 1358
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/Qwen/Qwen2.5-Coder-3B-Instruct",
+      "latency_ms": 1818
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "huggingface_ag9/katanemo/Arch-Router-1.5B",
+      "latency_ms": 1101
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "kilo/kilo-auto/free",
+      "latency_ms": 3507
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "kilo/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "latency_ms": 2139
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "kilo/nvidia/nemotron-3-super-120b-a12b:free",
+      "latency_ms": 2493
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "kilo/openrouter/free",
+      "latency_ms": 2193
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "kilo/poolside/laguna-m.1:free",
+      "latency_ms": 2335
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "kilo/poolside/laguna-xs.2:free",
+      "latency_ms": 2365
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/codestral-2508",
+      "latency_ms": 1747
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/codestral-latest",
+      "latency_ms": 1329
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/devstral-2512",
+      "latency_ms": 1544
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/devstral-latest",
+      "latency_ms": 2764
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/devstral-medium-2507",
+      "latency_ms": 1756
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/devstral-medium-latest",
+      "latency_ms": 1464
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/devstral-small-2507",
+      "latency_ms": 1446
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/magistral-medium-2509",
+      "latency_ms": 1448
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/magistral-medium-latest",
+      "latency_ms": 1344
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/magistral-small-2509",
+      "latency_ms": 1433
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/magistral-small-latest",
+      "latency_ms": 1431
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/ministral-14b-2512",
+      "latency_ms": 1384
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/ministral-14b-latest",
+      "latency_ms": 1355
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/ministral-3b-2512",
+      "latency_ms": 1270
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/ministral-3b-latest",
+      "latency_ms": 1244
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/ministral-8b-2512",
+      "latency_ms": 1269
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/ministral-8b-latest",
+      "latency_ms": 1720
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-large-2411",
+      "latency_ms": 1738
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-large-2512",
+      "latency_ms": 1549
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-large-latest",
+      "latency_ms": 1548
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-large-pixtral-2411",
+      "latency_ms": 1401
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-medium",
+      "latency_ms": 1298
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-medium-2505",
+      "latency_ms": 1621
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-medium-2508",
+      "latency_ms": 4688
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-medium-2604",
+      "latency_ms": 1638
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-medium-3",
+      "latency_ms": 1487
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-medium-3-5",
+      "latency_ms": 1441
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-medium-3.5",
+      "latency_ms": 2679
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-medium-c21211-r0-75",
+      "latency_ms": 1364
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-medium-latest",
+      "latency_ms": 1695
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-small-2506",
+      "latency_ms": 1396
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-small-2603",
+      "latency_ms": 1437
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-small-latest",
+      "latency_ms": 1405
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-tiny-2407",
+      "latency_ms": 1303
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-tiny-latest",
+      "latency_ms": 1289
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-vibe-cli-fast",
+      "latency_ms": 1368
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-vibe-cli-latest",
+      "latency_ms": 1410
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/mistral-vibe-cli-with-tools",
+      "latency_ms": 1307
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/open-mistral-nemo",
+      "latency_ms": 3097
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/open-mistral-nemo-2407",
+      "latency_ms": 1580
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/voxtral-mini-2507",
+      "latency_ms": 1473
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/voxtral-mini-latest",
+      "latency_ms": 1284
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/voxtral-small-2507",
+      "latency_ms": 1427
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "mistral/voxtral-small-latest",
+      "latency_ms": 1517
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "openrouter/google/gemma-4-31b-it:free",
+      "latency_ms": 1898
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "openrouter/liquid/lfm-2.5-1.2b-instruct:free",
+      "latency_ms": 1289
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "openrouter/liquid/lfm-2.5-1.2b-thinking:free",
+      "latency_ms": 1297
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "openrouter/nvidia/nemotron-3-nano-30b-a3b:free",
+      "latency_ms": 1473
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "latency_ms": 1495
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+      "latency_ms": 1809
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "openrouter/nvidia/nemotron-nano-12b-v2-vl:free",
+      "latency_ms": 4581
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "openrouter/nvidia/nemotron-nano-9b-v2:free",
+      "latency_ms": 2542
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "openrouter/openai/gpt-oss-120b:free",
+      "latency_ms": 2680
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "openrouter/openai/gpt-oss-20b:free",
+      "latency_ms": 2129
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "openrouter/openrouter/free",
+      "latency_ms": 4350
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "openrouter/openrouter/owl-alpha",
+      "latency_ms": 2913
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "openrouter/poolside/laguna-m.1:free",
+      "latency_ms": 1987
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "openrouter/poolside/laguna-xs.2:free",
+      "latency_ms": 1367
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "openrouter/z-ai/glm-4.5-air:free",
+      "latency_ms": 2476
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/claude-fast",
+      "latency_ms": 2761
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/claude-opus-4.7",
+      "latency_ms": 2593
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/deepseek",
+      "latency_ms": 2143
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/deepseek-pro",
+      "latency_ms": 2373
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/gemini",
+      "latency_ms": 2545
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/gemini-fast",
+      "latency_ms": 2040
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/gemini-flash-lite-3.1",
+      "latency_ms": 2075
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/gemini-large",
+      "latency_ms": 3594
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/gemma",
+      "latency_ms": 1971
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/glm",
+      "latency_ms": 3231
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/grok",
+      "latency_ms": 2317
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/kimi",
+      "latency_ms": 4255
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/kimi-k2.6",
+      "latency_ms": 2101
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/llama",
+      "latency_ms": 2346
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/llama-scout",
+      "latency_ms": 3199
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/minimax",
+      "latency_ms": 1957
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/mistral",
+      "latency_ms": 2508
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/mistral-4",
+      "latency_ms": 2218
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/mistral-large",
+      "latency_ms": 2284
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/nova",
+      "latency_ms": 2126
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/nova-fast",
+      "latency_ms": 2016
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/polly",
+      "latency_ms": 4480
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/qwen-coder",
+      "latency_ms": 1759
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/qwen-large",
+      "latency_ms": 1855
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/qwen-safety",
+      "latency_ms": 3159
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/qwen-vision",
+      "latency_ms": 1917
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/qwen-vision-pro",
+      "latency_ms": 11975
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "sambanova/DeepSeek-V3.1",
+      "latency_ms": 3878
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "sambanova/DeepSeek-V3.2",
+      "latency_ms": 1883
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "sambanova/Llama-4-Maverick-17B-128E-Instruct",
+      "latency_ms": 3577
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "sambanova/Meta-Llama-3.3-70B-Instruct",
+      "latency_ms": 1478
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "sambanova/gemma-3-12b-it",
+      "latency_ms": 2325
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "sambanova/gpt-oss-120b",
+      "latency_ms": 1596
+    }
+  ],
+  "prompt": "hi",
+  "target_models": 3815,
+  "tested_models": 3815,
+  "total_models": 3815,
+  "usable_count": 251,
+  "usable_model_ids": [
+    "cerebras/gpt-oss-120b",
+    "cerebras/zai-glm-4.7",
+    "cloudflare/@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
+    "cloudflare/@cf/google/gemma-2b-it-lora",
+    "cloudflare/@cf/google/gemma-3-12b-it",
+    "cloudflare/@cf/google/gemma-7b-it-lora",
+    "cloudflare/@cf/meta-llama/llama-2-7b-chat-hf-lora",
+    "cloudflare/@cf/meta/llama-3.1-8b-instruct-fp8",
+    "cloudflare/@cf/meta/llama-3.2-1b-instruct",
+    "cloudflare/@cf/meta/llama-3.2-3b-instruct",
+    "cloudflare/@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+    "cloudflare/@cf/meta/llama-4-scout-17b-16e-instruct",
+    "cloudflare/@cf/meta/llama-guard-3-8b",
+    "cloudflare/@cf/mistral/mistral-7b-instruct-v0.1",
+    "cloudflare/@cf/mistral/mistral-7b-instruct-v0.2-lora",
+    "cloudflare/@cf/mistralai/mistral-small-3.1-24b-instruct",
+    "cloudflare/@cf/qwen/qwen2.5-coder-32b-instruct",
+    "cloudflare/@cf/qwen/qwq-32b",
+    "cloudflare/@hf/google/gemma-7b-it",
+    "cloudflare/@hf/mistral/mistral-7b-instruct-v0.2",
+    "cohere/c4ai-aya-expanse-32b",
+    "cohere/c4ai-aya-vision-32b",
+    "cohere/command-a-03-2025",
+    "cohere/command-a-reasoning-08-2025",
+    "cohere/command-a-translate-08-2025",
+    "cohere/command-a-vision-07-2025",
+    "cohere/command-r-08-2024",
+    "cohere/command-r-plus-08-2024",
+    "cohere/command-r7b-12-2024",
+    "cohere/command-r7b-arabic-02-2025",
+    "electronhub/glm-4.5-air",
+    "electronhub/llama-3-typhoon-v1.5-8b-instruct",
+    "electronhub/llama-3.1-405b",
+    "electronhub/llama-3.1-70b",
+    "electronhub/llama-3.1-8b",
+    "electronhub/llama-3.1-8b-lexi-uncensored-v2",
+    "electronhub/o3-high",
+    "electronhub/o3-low",
+    "electronhub/o3-mini",
+    "electronhub/o3-mini-high",
+    "electronhub/o3-mini-low",
+    "electronhub/trinity-mini",
+    "electronhub/voxtral-mini-2507",
+    "exa/exa",
+    "exa/exa-research",
+    "gemini-flash-1",
+    "gemini-flash-3",
+    "gemini-flash-lite-1",
+    "gemini-flash-lite-3",
+    "gemini/gemini-2.5-flash",
+    "gemini/gemini-2.5-flash-lite",
+    "gemini/gemini-3-flash-preview",
+    "gemini/gemini-3.1-flash-lite",
+    "gemini/gemini-3.1-flash-lite-preview",
+    "gemini/gemini-flash-latest",
+    "gemini/gemini-flash-lite-latest",
+    "gemini/gemini-robotics-er-1.6-preview",
+    "gemini/gemma-4-26b-a4b-it",
+    "gemini/gemma-4-31b-it",
+    "genlabs/deca-2.5-mini",
+    "genlabs/deca-2.5-pro",
+    "genlabs/deca-2.5-ultra",
+    "groq/allam-2-7b",
+    "groq/groq/compound",
+    "groq/groq/compound-mini",
+    "groq/llama-3.1-8b-instant",
+    "groq/llama-3.3-70b-versatile",
+    "groq/meta-llama/llama-4-scout-17b-16e-instruct",
+    "groq/meta-llama/llama-prompt-guard-2-22m",
+    "groq/meta-llama/llama-prompt-guard-2-86m",
+    "groq/openai/gpt-oss-120b",
+    "groq/openai/gpt-oss-20b",
+    "groq/openai/gpt-oss-safeguard-20b",
+    "groq/qwen/qwen3-32b",
+    "huggingface/CohereLabs/aya-expanse-32b",
+    "huggingface/CohereLabs/aya-vision-32b",
+    "huggingface/CohereLabs/c4ai-command-a-03-2025",
+    "huggingface/CohereLabs/c4ai-command-r-08-2024",
+    "huggingface/CohereLabs/c4ai-command-r7b-arabic-02-2025",
+    "huggingface/CohereLabs/command-a-reasoning-08-2025",
+    "huggingface/CohereLabs/command-a-translate-08-2025",
+    "huggingface/CohereLabs/command-a-vision-07-2025",
+    "huggingface/CohereLabs/tiny-aya-earth",
+    "huggingface/CohereLabs/tiny-aya-global",
+    "huggingface/CohereLabs/tiny-aya-water",
+    "huggingface/EssentialAI/rnj-1-instruct",
+    "huggingface/MiniMaxAI/MiniMax-M2",
+    "huggingface/MiniMaxAI/MiniMax-M2.1",
+    "huggingface/MiniMaxAI/MiniMax-M2.5",
+    "huggingface/Qwen/QwQ-32B",
+    "huggingface/Qwen/Qwen2.5-72B-Instruct",
+    "huggingface/Qwen/Qwen2.5-7B-Instruct",
+    "huggingface/Qwen/Qwen2.5-Coder-32B-Instruct",
+    "huggingface/katanemo/Arch-Router-1.5B",
+    "huggingface_ag19/CohereLabs/aya-expanse-32b",
+    "huggingface_ag19/CohereLabs/aya-vision-32b",
+    "huggingface_ag19/CohereLabs/c4ai-command-a-03-2025",
+    "huggingface_ag19/CohereLabs/c4ai-command-r-08-2024",
+    "huggingface_ag19/CohereLabs/c4ai-command-r7b-arabic-02-2025",
+    "huggingface_ag19/CohereLabs/command-a-reasoning-08-2025",
+    "huggingface_ag19/CohereLabs/command-a-translate-08-2025",
+    "huggingface_ag19/CohereLabs/command-a-vision-07-2025",
+    "huggingface_ag19/CohereLabs/tiny-aya-earth",
+    "huggingface_ag19/CohereLabs/tiny-aya-global",
+    "huggingface_ag19/CohereLabs/tiny-aya-water",
+    "huggingface_ag19/EssentialAI/rnj-1-instruct",
+    "huggingface_ag19/MiniMaxAI/MiniMax-M2",
+    "huggingface_ag19/MiniMaxAI/MiniMax-M2.1",
+    "huggingface_ag19/MiniMaxAI/MiniMax-M2.5",
+    "huggingface_ag19/Qwen/QwQ-32B",
+    "huggingface_ag19/Qwen/Qwen2.5-72B-Instruct",
+    "huggingface_ag19/Qwen/Qwen2.5-7B-Instruct",
+    "huggingface_ag19/Qwen/Qwen2.5-Coder-7B-Instruct",
+    "huggingface_ag19/deepseek-ai/DeepSeek-V3",
+    "huggingface_ag19/deepseek-ai/DeepSeek-V3-0324",
+    "huggingface_ag19/deepseek-ai/DeepSeek-V3.1",
+    "huggingface_ag19/deepseek-ai/DeepSeek-V3.1-Terminus",
+    "huggingface_ag19/deepseek-ai/DeepSeek-V3.2",
+    "huggingface_ag19/deepseek-ai/DeepSeek-V3.2-Exp",
+    "huggingface_ag19/deepseek-ai/DeepSeek-V4-Flash",
+    "huggingface_ag19/deepseek-ai/DeepSeek-V4-Pro",
+    "huggingface_ag19/google/gemma-3-27b-it",
+    "huggingface_ag19/google/gemma-3n-E4B-it",
+    "huggingface_ag19/katanemo/Arch-Router-1.5B",
+    "huggingface_ag19/meta-llama/Llama-3.1-70B-Instruct",
+    "huggingface_ag19/meta-llama/Llama-3.1-8B-Instruct",
+    "huggingface_ag19/meta-llama/Llama-3.3-70B-Instruct",
+    "huggingface_ag19/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+    "huggingface_ag19/meta-llama/Llama-Guard-4-12B",
+    "huggingface_ag19/meta-llama/Meta-Llama-3-70B-Instruct",
+    "huggingface_ag19/meta-llama/Meta-Llama-3-8B-Instruct",
+    "huggingface_ag19/moonshotai/Kimi-K2-Instruct",
+    "huggingface_ag19/moonshotai/Kimi-K2-Instruct-0905",
+    "huggingface_ag9/CohereLabs/aya-expanse-32b",
+    "huggingface_ag9/CohereLabs/aya-vision-32b",
+    "huggingface_ag9/CohereLabs/c4ai-command-a-03-2025",
+    "huggingface_ag9/CohereLabs/c4ai-command-r-08-2024",
+    "huggingface_ag9/CohereLabs/c4ai-command-r7b-arabic-02-2025",
+    "huggingface_ag9/CohereLabs/command-a-reasoning-08-2025",
+    "huggingface_ag9/CohereLabs/command-a-translate-08-2025",
+    "huggingface_ag9/CohereLabs/command-a-vision-07-2025",
+    "huggingface_ag9/CohereLabs/tiny-aya-earth",
+    "huggingface_ag9/CohereLabs/tiny-aya-global",
+    "huggingface_ag9/CohereLabs/tiny-aya-water",
+    "huggingface_ag9/EssentialAI/rnj-1-instruct",
+    "huggingface_ag9/MiniMaxAI/MiniMax-M2",
+    "huggingface_ag9/MiniMaxAI/MiniMax-M2.1",
+    "huggingface_ag9/MiniMaxAI/MiniMax-M2.5",
+    "huggingface_ag9/Qwen/QwQ-32B",
+    "huggingface_ag9/Qwen/Qwen2.5-72B-Instruct",
+    "huggingface_ag9/Qwen/Qwen2.5-7B-Instruct",
+    "huggingface_ag9/Qwen/Qwen2.5-Coder-3B-Instruct",
+    "huggingface_ag9/katanemo/Arch-Router-1.5B",
+    "kilo/kilo-auto/free",
+    "kilo/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+    "kilo/nvidia/nemotron-3-super-120b-a12b:free",
+    "kilo/openrouter/free",
+    "kilo/poolside/laguna-m.1:free",
+    "kilo/poolside/laguna-xs.2:free",
+    "mistral/codestral-2508",
+    "mistral/codestral-latest",
+    "mistral/devstral-2512",
+    "mistral/devstral-latest",
+    "mistral/devstral-medium-2507",
+    "mistral/devstral-medium-latest",
+    "mistral/devstral-small-2507",
+    "mistral/magistral-medium-2509",
+    "mistral/magistral-medium-latest",
+    "mistral/magistral-small-2509",
+    "mistral/magistral-small-latest",
+    "mistral/ministral-14b-2512",
+    "mistral/ministral-14b-latest",
+    "mistral/ministral-3b-2512",
+    "mistral/ministral-3b-latest",
+    "mistral/ministral-8b-2512",
+    "mistral/ministral-8b-latest",
+    "mistral/mistral-large-2411",
+    "mistral/mistral-large-2512",
+    "mistral/mistral-large-latest",
+    "mistral/mistral-large-pixtral-2411",
+    "mistral/mistral-medium",
+    "mistral/mistral-medium-2505",
+    "mistral/mistral-medium-2508",
+    "mistral/mistral-medium-2604",
+    "mistral/mistral-medium-3",
+    "mistral/mistral-medium-3-5",
+    "mistral/mistral-medium-3.5",
+    "mistral/mistral-medium-c21211-r0-75",
+    "mistral/mistral-medium-latest",
+    "mistral/mistral-small-2506",
+    "mistral/mistral-small-2603",
+    "mistral/mistral-small-latest",
+    "mistral/mistral-tiny-2407",
+    "mistral/mistral-tiny-latest",
+    "mistral/mistral-vibe-cli-fast",
+    "mistral/mistral-vibe-cli-latest",
+    "mistral/mistral-vibe-cli-with-tools",
+    "mistral/open-mistral-nemo",
+    "mistral/open-mistral-nemo-2407",
+    "mistral/voxtral-mini-2507",
+    "mistral/voxtral-mini-latest",
+    "mistral/voxtral-small-2507",
+    "mistral/voxtral-small-latest",
+    "openrouter/google/gemma-4-31b-it:free",
+    "openrouter/liquid/lfm-2.5-1.2b-instruct:free",
+    "openrouter/liquid/lfm-2.5-1.2b-thinking:free",
+    "openrouter/nvidia/nemotron-3-nano-30b-a3b:free",
+    "openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+    "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+    "openrouter/nvidia/nemotron-nano-12b-v2-vl:free",
+    "openrouter/nvidia/nemotron-nano-9b-v2:free",
+    "openrouter/openai/gpt-oss-120b:free",
+    "openrouter/openai/gpt-oss-20b:free",
+    "openrouter/openrouter/free",
+    "openrouter/openrouter/owl-alpha",
+    "openrouter/poolside/laguna-m.1:free",
+    "openrouter/poolside/laguna-xs.2:free",
+    "openrouter/z-ai/glm-4.5-air:free",
+    "pollinations/claude-fast",
+    "pollinations/claude-opus-4.7",
+    "pollinations/deepseek",
+    "pollinations/deepseek-pro",
+    "pollinations/gemini",
+    "pollinations/gemini-fast",
+    "pollinations/gemini-flash-lite-3.1",
+    "pollinations/gemini-large",
+    "pollinations/gemma",
+    "pollinations/glm",
+    "pollinations/grok",
+    "pollinations/kimi",
+    "pollinations/kimi-k2.6",
+    "pollinations/llama",
+    "pollinations/llama-scout",
+    "pollinations/minimax",
+    "pollinations/mistral",
+    "pollinations/mistral-4",
+    "pollinations/mistral-large",
+    "pollinations/nova",
+    "pollinations/nova-fast",
+    "pollinations/polly",
+    "pollinations/qwen-coder",
+    "pollinations/qwen-large",
+    "pollinations/qwen-safety",
+    "pollinations/qwen-vision",
+    "pollinations/qwen-vision-pro",
+    "sambanova/DeepSeek-V3.1",
+    "sambanova/DeepSeek-V3.2",
+    "sambanova/Llama-4-Maverick-17B-128E-Instruct",
+    "sambanova/Meta-Llama-3.3-70B-Instruct",
+    "sambanova/gemma-3-12b-it",
+    "sambanova/gpt-oss-120b"
+  ],
+  "version": 1
+}

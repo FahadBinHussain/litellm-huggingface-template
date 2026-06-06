@@ -14,6 +14,7 @@ from starlette.background import BackgroundTask
 
 UPSTREAM_URL = os.environ.get("LITELLM_UPSTREAM_URL", "http://127.0.0.1:7861").rstrip("/")
 MODEL_CATALOG_PATH = Path(os.environ.get("MODEL_CATALOG_PATH", "/app/config/model-catalog.json"))
+USABLE_MODELS_PATH = Path(os.environ.get("USABLE_MODELS_PATH", "/app/config/usable-models.json"))
 GENLABS_BASE_URL = os.environ.get("GENLABS_API_BASE", "https://api.genlabs.dev/deca/v1").rstrip("/")
 GENLABS_MODELS = (
     "genlabs/deca-2.5-mini",
@@ -72,6 +73,7 @@ HOP_BY_HOP_HEADERS = {
 app = FastAPI()
 client = httpx.AsyncClient(timeout=httpx.Timeout(300.0, connect=30.0))
 catalog_metadata_cache: dict[str, dict[str, Any]] | None = None
+usable_metadata_cache: dict[str, dict[str, Any]] | None = None
 
 
 @app.on_event("shutdown")
@@ -316,6 +318,63 @@ def load_catalog_metadata() -> dict[str, dict[str, Any]]:
     return metadata
 
 
+def load_usable_metadata() -> dict[str, dict[str, Any]]:
+    global usable_metadata_cache
+    if usable_metadata_cache is not None:
+        return usable_metadata_cache
+
+    metadata: dict[str, dict[str, Any]] = {}
+    try:
+        payload = json.loads(USABLE_MODELS_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        usable_metadata_cache = metadata
+        return metadata
+
+    if not isinstance(payload, dict):
+        usable_metadata_cache = metadata
+        return metadata
+
+    checked_at = payload.get("checked_at")
+    for model_id in payload.get("usable_model_ids", []):
+        if not isinstance(model_id, str) or not model_id.strip():
+            continue
+        metadata[model_id.strip()] = {
+            "usable": True,
+            "verified_usable": True,
+            "usable_checked_at": checked_at,
+            "usable_source": "config/usable-models.json",
+        }
+
+    for model in payload.get("models", []):
+        if not isinstance(model, dict):
+            continue
+        model_id = model.get("id")
+        if not isinstance(model_id, str) or not model_id.strip():
+            continue
+        key = model_id.strip()
+        item = metadata.setdefault(
+            key,
+            {
+                "usable": True,
+                "verified_usable": True,
+                "usable_checked_at": checked_at,
+                "usable_source": "config/usable-models.json",
+            },
+        )
+        item["usable_latency_ms"] = model.get("latency_ms")
+        item["usable_http_status"] = model.get("http_status")
+
+    usable_metadata_cache = metadata
+    return metadata
+
+
+def model_metadata(model_id: str) -> dict[str, Any]:
+    return {
+        **load_catalog_metadata().get(model_id, {}),
+        **load_usable_metadata().get(model_id, {}),
+    }
+
+
 def runtime_extra_model_ids() -> set[str]:
     model_ids: set[str] = set()
     if genlabs_api_key():
@@ -329,7 +388,22 @@ def runtime_extra_model_ids() -> set[str]:
 
 def merge_model_metadata(raw_model: dict[str, Any], metadata: dict[str, Any]) -> dict[str, Any]:
     enriched = dict(raw_model)
-    for key in ("provider", "free", "is_free", "pricing", "task", "mode", "capabilities", "catalog_source"):
+    for key in (
+        "provider",
+        "free",
+        "is_free",
+        "pricing",
+        "task",
+        "mode",
+        "capabilities",
+        "catalog_source",
+        "usable",
+        "verified_usable",
+        "usable_checked_at",
+        "usable_source",
+        "usable_latency_ms",
+        "usable_http_status",
+    ):
         if key in metadata and key not in enriched:
             enriched[key] = metadata[key]
 
@@ -777,7 +851,6 @@ async def models_response(request: Request) -> Response:
             media_type=upstream.headers.get("content-type"),
         )
 
-    catalog_metadata = load_catalog_metadata()
     if isinstance(payload, dict) and isinstance(payload.get("data"), list):
         enriched_data: list[Any] = []
         existing = set()
@@ -786,7 +859,7 @@ async def models_response(request: Request) -> Response:
                 model_id = item.get("id")
                 if isinstance(model_id, str):
                     existing.add(model_id)
-                    metadata = catalog_metadata.get(model_id)
+                    metadata = model_metadata(model_id)
                     enriched_data.append(merge_model_metadata(item, metadata) if metadata else item)
                     continue
             enriched_data.append(item)
@@ -794,7 +867,7 @@ async def models_response(request: Request) -> Response:
 
         for model in sorted(runtime_extra_model_ids()):
             if model not in existing:
-                metadata = catalog_metadata.get(model, {})
+                metadata = model_metadata(model)
                 payload["data"].append(
                     {
                         "id": model,
@@ -808,11 +881,15 @@ async def models_response(request: Request) -> Response:
 
 
 def model_catalog_response() -> Response:
-    metadata = load_catalog_metadata()
+    metadata = {
+        **load_catalog_metadata(),
+    }
+    for model_id, usable in load_usable_metadata().items():
+        metadata[model_id] = {**metadata.get(model_id, {"id": model_id}), **usable}
     return JSONResponse(
         {
             "object": "model_catalog",
-            "source": str(MODEL_CATALOG_PATH),
+            "sources": [str(MODEL_CATALOG_PATH), str(USABLE_MODELS_PATH)],
             "count": len(metadata),
             "data": [metadata[key] for key in sorted(metadata)],
         }
