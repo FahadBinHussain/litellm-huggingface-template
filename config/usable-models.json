@@ -444,32 +444,392 @@
     }
   ],
   "image_base_url": "https://awdafw-litellm-huggingface-template.hf.space/v1",
-  "image_checked_at": "2026-06-06T10:52:17.407022Z",
+  "image_checked_at": "2026-06-06T11:18:12.782653Z",
   "image_complete": true,
-  "image_failure_count": 7,
+  "image_failure_count": 230,
   "image_failure_samples": [
     {
       "attempts": 1,
-      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'multipart' (f69996b0-3966-4858-b7dd-62f248a04d88)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/blackforestlabs/flux-2",
+      "latency_ms": 8480,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Invalid payload provided. Received Model Group=aimlapi/blackforestlabs/flux-2-edit\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"4",
+      "http_status": 400,
+      "id": "aimlapi/blackforestlabs/flux-2-edit",
+      "latency_ms": 3777,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/blackforestlabs/flux-2-lora",
+      "latency_ms": 8819,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Invalid payload provided. Received Model Group=aimlapi/blackforestlabs/flux-2-lora-edit\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"cod",
+      "http_status": 400,
+      "id": "aimlapi/blackforestlabs/flux-2-lora-edit",
+      "latency_ms": 3709,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/blackforestlabs/flux-2-max",
+      "latency_ms": 6854,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Invalid payload provided. Received Model Group=aimlapi/blackforestlabs/flux-2-max-edit\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code",
+      "http_status": 400,
+      "id": "aimlapi/blackforestlabs/flux-2-max-edit",
+      "latency_ms": 1381,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/blackforestlabs/flux-2-pro",
+      "latency_ms": 6283,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/blackforestlabs/flux-2-pro-edit",
+      "latency_ms": 6355,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/bytedance/seedream-3.0",
+      "latency_ms": 6225,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/bytedance/seedream-4-5",
+      "latency_ms": 6412,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/bytedance/seedream-5-0-lite-preview",
+      "latency_ms": 6150,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/bytedance/seedream-v4-edit",
+      "latency_ms": 6559,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/bytedance/seedream-v4-text-to-image",
+      "latency_ms": 6328,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/dall-e-2",
+      "latency_ms": 6266,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/dall-e-3",
+      "latency_ms": 6226,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/flux-pro",
+      "latency_ms": 6063,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/flux-pro/v1.1",
+      "latency_ms": 6769,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/flux-pro/v1.1-ultra",
+      "latency_ms": 7528,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/flux-realism",
+      "latency_ms": 6678,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/flux/dev",
+      "latency_ms": 5723,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/flux/dev/image-to-image",
+      "latency_ms": 6951,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/flux/kontext-max/image-to-image",
+      "latency_ms": 6003,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/flux/kontext-max/text-to-image",
+      "latency_ms": 7712,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/flux/kontext-pro/image-to-image",
+      "latency_ms": 6344,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/flux/kontext-pro/text-to-image",
+      "latency_ms": 6754,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/flux/schnell",
+      "latency_ms": 6673,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/flux/srpo",
+      "latency_ms": 6401,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Invalid payload provided. Received Model Group=aimlapi/flux/srpo/image-to-image\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":null,\"code\":\"400\"",
+      "http_status": 400,
+      "id": "aimlapi/flux/srpo/image-to-image",
+      "latency_ms": 1363,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/google/gemini-3-pro-image-preview",
+      "latency_ms": 5969,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - Invalid payload provided. Received Model Group=aimlapi/google/gemini-3-pro-image-preview-edit\\nAvailable Model Group Fallbacks=None\",\"type\":null,\"param\":nul",
+      "http_status": 400,
+      "id": "aimlapi/google/gemini-3-pro-image-preview-edit",
+      "latency_ms": 1353,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/google/imagen-4.0-fast-generate-001",
+      "latency_ms": 6103,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/google/imagen-4.0-generate-001",
+      "latency_ms": 6385,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/google/imagen-4.0-ultra-generate-001",
+      "latency_ms": 5690,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/google/imagen4/preview",
+      "latency_ms": 6420,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/hunyuan/hunyuan-image-v3-text-to-image",
+      "latency_ms": 7977,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/imagen-3.0-generate-002",
+      "latency_ms": 6822,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/openai/gpt-image-1",
+      "latency_ms": 5853,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/openai/gpt-image-1-5",
+      "latency_ms": 7199,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/openai/gpt-image-1-mini",
+      "latency_ms": 6547,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/recraft-v3",
+      "latency_ms": 6324,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/sber-ai/kandinsky5-distill-t2v",
+      "latency_ms": 6548,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/sber-ai/kandinsky5-t2v",
+      "latency_ms": 6073,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/stable-diffusion-v3-medium",
+      "latency_ms": 6119,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 403: {\"error\":{\"message\":\"litellm.APIError: APIError: OpenAIException - You've run out of funds. Please top up your balance or update your payment method to continue: https://aimlapi.com/app/billing/. Received Model Group=aim",
+      "http_status": 403,
+      "id": "aimlapi/stable-diffusion-v35-large",
+      "latency_ms": 6438,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: AiError: Input prompt contains NSFW content. (2847e007-d6ca-4481-a0f1-f4de0b544904)\",\"code\":3030}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "http_status": 400,
+      "id": "cloudflare/@cf/black-forest-labs/flux-1-schnell",
+      "latency_ms": 2496,
+      "ok": false
+    },
+    {
+      "attempts": 1,
+      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'multipart' (74ea3f5c-1a0b-41e2-b12e-3e43778f7fe3)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
       "http_status": 400,
       "id": "cloudflare/@cf/black-forest-labs/flux-2-dev",
-      "latency_ms": 1235,
+      "latency_ms": 1329,
       "ok": false
     },
     {
       "attempts": 1,
-      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'multipart' (095bd3b1-25db-4fdb-b27e-b25200372c53)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'multipart' (b9b7bb9c-6380-4108-b9b7-b3610a2d9066)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
       "http_status": 400,
       "id": "cloudflare/@cf/black-forest-labs/flux-2-klein-4b",
-      "latency_ms": 1081,
+      "latency_ms": 1241,
       "ok": false
     },
     {
       "attempts": 1,
-      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'multipart' (5ece6028-feb8-4dc7-9a5c-026392a08364)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'multipart' (bb49cee0-0545-433d-8d19-73760756ca32)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
       "http_status": 400,
       "id": "cloudflare/@cf/black-forest-labs/flux-2-klein-9b",
-      "latency_ms": 1191,
+      "latency_ms": 1259,
       "ok": false
     },
     {
@@ -477,41 +837,37 @@
       "error": "missing image data in successful response",
       "http_status": 200,
       "id": "cloudflare/@cf/deepgram/flux",
-      "latency_ms": 1353,
+      "latency_ms": 1231,
       "ok": false
     },
     {
       "attempts": 1,
-      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: AiError: Model input is not valid: missing required input image (568768a4-93b0-4060-8bb6-517b93b6e461)\",\"code\":3030}],\"success\":false,\"result\":{},\"messages\":[]}",
+      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: AiError: Model input is not valid: missing required input image (acdd18b3-b484-425d-8627-d5cb9f3f13df)\",\"code\":3030}],\"success\":false,\"result\":{},\"messages\":[]}",
       "http_status": 400,
       "id": "cloudflare/@cf/runwayml/stable-diffusion-v1-5-img2img",
-      "latency_ms": 1352,
-      "ok": false
-    },
-    {
-      "attempts": 1,
-      "error": "HTTP 400: {\"errors\":[{\"message\":\"AiError: AiError: Model input is not valid: missing required input image (afeb7d32-f89b-448e-9ed6-37c1c21027a1)\",\"code\":3030}],\"success\":false,\"result\":{},\"messages\":[]}",
-      "http_status": 400,
-      "id": "cloudflare/@cf/runwayml/stable-diffusion-v1-5-inpainting",
-      "latency_ms": 1353,
-      "ok": false
-    },
-    {
-      "attempts": 1,
-      "error": "HTTP 402: {\"success\":false,\"error\":{\"message\":\"Insufficient balance. This request costs ~0.0099 pollen, but your available balance is 0.0083.\",\"code\":\"PAYMENT_REQUIRED\",\"timestamp\":\"2026-06-06T10:52:48.351Z\"},\"status\":402}",
-      "http_status": 402,
-      "id": "pollinations/gptimage",
-      "latency_ms": 1492,
+      "latency_ms": 1390,
       "ok": false
     }
   ],
   "image_failure_summary": [
     {
-      "count": 5,
+      "count": 117,
+      "error": "HTTP 429"
+    },
+    {
+      "count": 71,
+      "error": "HTTP 403"
+    },
+    {
+      "count": 24,
       "error": "HTTP 400"
     },
     {
-      "count": 1,
+      "count": 9,
+      "error": "HTTP 500"
+    },
+    {
+      "count": 8,
       "error": "HTTP 402"
     },
     {
@@ -523,45 +879,80 @@
     {
       "attempts": 1,
       "http_status": 200,
-      "id": "cloudflare/@cf/black-forest-labs/flux-1-schnell",
-      "latency_ms": 6693
-    },
-    {
-      "attempts": 1,
-      "http_status": 200,
       "id": "cloudflare/@cf/bytedance/stable-diffusion-xl-lightning",
-      "latency_ms": 10182
+      "latency_ms": 10700
     },
     {
       "attempts": 1,
       "http_status": 200,
       "id": "cloudflare/@cf/stabilityai/stable-diffusion-xl-base-1.0",
-      "latency_ms": 101571
+      "latency_ms": 24107
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/sdxl-lunarcherrymix-v22-baseillustrxl20",
+      "latency_ms": 46921
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/sdxl-lunarcherrymix-v23",
+      "latency_ms": 34461
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/sdxl-miaomiao-harem-v16g",
+      "latency_ms": 21564
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/sdxl-naixl-mmmix-v45",
+      "latency_ms": 41105
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "electronhub/sdxl-naixl-mmmix-v50",
+      "latency_ms": 26703
     },
     {
       "attempts": 1,
       "http_status": 200,
       "id": "pollinations/flux",
-      "latency_ms": 2443
+      "latency_ms": 2589
+    },
+    {
+      "attempts": 1,
+      "http_status": 200,
+      "id": "pollinations/gptimage",
+      "latency_ms": 16583
     },
     {
       "attempts": 1,
       "http_status": 200,
       "id": "pollinations/zimage",
-      "latency_ms": 6447
+      "latency_ms": 4500
     }
   ],
   "image_prompt": "a tiny blue square on a white background",
   "image_size": null,
-  "image_target_models": 12,
-  "image_tested_models": 12,
+  "image_target_models": 240,
+  "image_tested_models": 240,
   "image_total_models": 240,
-  "image_usable_count": 5,
+  "image_usable_count": 10,
   "image_usable_model_ids": [
-    "cloudflare/@cf/black-forest-labs/flux-1-schnell",
     "cloudflare/@cf/bytedance/stable-diffusion-xl-lightning",
     "cloudflare/@cf/stabilityai/stable-diffusion-xl-base-1.0",
+    "electronhub/sdxl-lunarcherrymix-v22-baseillustrxl20",
+    "electronhub/sdxl-lunarcherrymix-v23",
+    "electronhub/sdxl-miaomiao-harem-v16g",
+    "electronhub/sdxl-naixl-mmmix-v45",
+    "electronhub/sdxl-naixl-mmmix-v50",
     "pollinations/flux",
+    "pollinations/gptimage",
     "pollinations/zimage"
   ],
   "max_tokens": 1,
