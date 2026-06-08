@@ -1,5 +1,5 @@
 {
-  "base_url": "https://awdafw-litellm-huggingface-template.hf.space/v1",
+  "base_url": "https://alchoholpad-litellm-huggingface-template.hf.space/v1",
   "checked_at": "2026-06-06T05:24:10.448104Z",
   "complete": true,
   "failure_count": 3564,
@@ -443,7 +443,7 @@
       "error": "TimeoutError: The read operation timed out"
     }
   ],
-  "image_base_url": "https://awdafw-litellm-huggingface-template.hf.space/v1",
+  "image_base_url": "https://alchoholpad-litellm-huggingface-template.hf.space/v1",
   "image_carried_usable_count": 3,
   "image_checked_at": "2026-06-06T14:06:25.819359Z",
   "image_complete": true,
